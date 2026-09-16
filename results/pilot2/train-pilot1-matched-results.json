@@ -1,0 +1,3076 @@
+{
+  "summary": {
+    "n_human": 27,
+    "n_ai": 27,
+    "by_genre": {
+      "personal": {
+        "human": 10,
+        "ai": 10
+      },
+      "tech": {
+        "human": 8,
+        "ai": 8
+      },
+      "wiki": {
+        "human": 9,
+        "ai": 9
+      }
+    },
+    "by_model": {
+      "claude-opus-5": 13,
+      "claude-sonnet-5": 14
+    },
+    "cost_usd": 4.0367,
+    "length_ratio_out_of_range": [
+      "ai-wiki-01",
+      "ai-wiki-02",
+      "ai-wiki-03",
+      "ai-wiki-04",
+      "ai-personal-01",
+      "ai-wiki-05",
+      "ai-wiki-06",
+      "ai-personal-02",
+      "ai-wiki-07",
+      "ai-personal-04",
+      "ai-wiki-08",
+      "ai-personal-05",
+      "ai-personal-06",
+      "ai-wiki-09",
+      "ai-personal-07",
+      "ai-wiki-10",
+      "ai-personal-08",
+      "ai-personal-09",
+      "ai-personal-10",
+      "ai-tech-01",
+      "ai-tech-02",
+      "ai-tech-03",
+      "ai-tech-04",
+      "ai-tech-05",
+      "ai-tech-06",
+      "ai-tech-07",
+      "ai-tech-08",
+      "ai-tech-09",
+      "ai-tech-10"
+    ],
+    "tested_features": 40,
+    "significant_by": [
+      "spacing_adherence",
+      "mattr"
+    ],
+    "features_with_full_hits": [
+      "comma_inclusion",
+      "comma_rate",
+      "mattr",
+      "noun_ratio",
+      "adj_ratio",
+      "nominalization_per_1k",
+      "pronoun_per_1k",
+      "topic_share",
+      "sent_len",
+      "sent_len_cv",
+      "dep_distance",
+      "coord_per_1k",
+      "downtoner_per_1k",
+      "degree_adv_per_1k",
+      "demonstrative_per_1k"
+    ],
+    "features_split_clean": [
+      "comma_rate",
+      "mattr",
+      "nominalization_per_1k",
+      "pronoun_per_1k",
+      "sent_len",
+      "dep_distance",
+      "demonstrative_per_1k"
+    ],
+    "ai_docs_hit_by_any_full": 19,
+    "not_measured": {
+      "38": "한국어 감성 측정 수단을 아직 정하지 않음"
+    }
+  },
+  "features": [
+    {
+      "key": "comma_inclusion",
+      "no": 1,
+      "name": "쉼표가 든 문장 비율",
+      "research": "up",
+      "n_h": 27,
+      "n_ai": 27,
+      "median_h": 0.3,
+      "median_ai": 0.363636,
+      "p_ai_gt_h": 0.6481481481481481,
+      "p": 0.06290621059252133,
+      "observed": "up",
+      "direction": "up",
+      "direction_from_sample": false,
+      "agrees_with_research": true,
+      "hits_full": [
+        "ai-wiki-02",
+        "ai-wiki-06",
+        "ai-wiki-10"
+      ],
+      "val_human_over": [
+        "tech-07",
+        "wiki-06",
+        "wiki-10"
+      ],
+      "hits_split": [
+        "ai-wiki-02",
+        "ai-wiki-03",
+        "ai-wiki-04",
+        "ai-wiki-06",
+        "ai-personal-02",
+        "ai-wiki-08",
+        "ai-personal-06",
+        "ai-wiki-10",
+        "ai-tech-10"
+      ],
+      "model_dirs": {
+        "claude-opus-5": "down",
+        "claude-sonnet-5": "up"
+      },
+      "genre_dirs": {
+        "personal": "up",
+        "tech": "up",
+        "wiki": "up"
+      },
+      "reversed_somewhere": true,
+      "q_by": 1.0,
+      "unique_hits_full": []
+    },
+    {
+      "key": "comma_rate",
+      "no": 2,
+      "name": "문장별 쉼표÷형태소 평균",
+      "research": "up",
+      "n_h": 27,
+      "n_ai": 27,
+      "median_h": 0.014544,
+      "median_ai": 0.01869,
+      "p_ai_gt_h": 0.5939643347050755,
+      "p": 0.23943570901798483,
+      "observed": "up",
+      "direction": "up",
+      "direction_from_sample": false,
+      "agrees_with_research": true,
+      "hits_full": [
+        "ai-wiki-02",
+        "ai-wiki-10"
+      ],
+      "val_human_over": [],
+      "hits_split": [
+        "ai-wiki-02",
+        "ai-wiki-10"
+      ],
+      "model_dirs": {
+        "claude-opus-5": "up",
+        "claude-sonnet-5": "up"
+      },
+      "genre_dirs": {
+        "personal": "up",
+        "tech": "up",
+        "wiki": "down"
+      },
+      "reversed_somewhere": true,
+      "q_by": 1.0,
+      "unique_hits_full": []
+    },
+    {
+      "key": "comma_position",
+      "no": 3,
+      "name": "쉼표의 문장 안 상대 위치",
+      "research": "up",
+      "n_h": 27,
+      "n_ai": 26,
+      "median_h": 0.431889,
+      "median_ai": 0.43046150000000005,
+      "p_ai_gt_h": 0.4886039886039886,
+      "p": 0.8938453114675832,
+      "observed": "down",
+      "direction": "up",
+      "direction_from_sample": false,
+      "agrees_with_research": false,
+      "hits_full": [],
+      "val_human_over": [],
+      "hits_split": [],
+      "model_dirs": {
+        "claude-opus-5": "up",
+        "claude-sonnet-5": "down"
+      },
+      "genre_dirs": {
+        "personal": "up",
+        "tech": "down",
+        "wiki": "up"
+      },
+      "reversed_somewhere": true,
+      "q_by": 1.0,
+      "unique_hits_full": []
+    },
+    {
+      "key": "comma_segment",
+      "no": 4,
+      "name": "쉼표로 나뉜 구간의 형태소 수(쉼표 있는 문장)",
+      "research": "up",
+      "n_h": 27,
+      "n_ai": 26,
+      "median_h": 14.8,
+      "median_ai": 13.249348000000001,
+      "p_ai_gt_h": 0.4458689458689459,
+      "p": 0.5046439818466952,
+      "observed": "down",
+      "direction": "up",
+      "direction_from_sample": false,
+      "agrees_with_research": false,
+      "hits_full": [],
+      "val_human_over": [
+        "tech-01",
+        "wiki-08"
+      ],
+      "hits_split": [
+        "ai-wiki-04",
+        "ai-wiki-06"
+      ],
+      "model_dirs": {
+        "claude-opus-5": "down",
+        "claude-sonnet-5": "down"
+      },
+      "genre_dirs": {
+        "personal": "up",
+        "tech": "down",
+        "wiki": "up"
+      },
+      "reversed_somewhere": true,
+      "q_by": 1.0,
+      "unique_hits_full": []
+    },
+    {
+      "key": "comma_pos_pair_div",
+      "no": 5,
+      "name": "쉼표 앞뒤 품사 쌍 종류÷전체",
+      "research": "up",
+      "n_h": 27,
+      "n_ai": 26,
+      "median_h": 0.6,
+      "median_ai": 0.5,
+      "p_ai_gt_h": 0.39886039886039887,
+      "p": 0.20913098717033085,
+      "observed": "down",
+      "direction": "up",
+      "direction_from_sample": false,
+      "agrees_with_research": false,
+      "hits_full": [],
+      "val_human_over": [],
+      "hits_split": [],
+      "model_dirs": {
+        "claude-opus-5": "down",
+        "claude-sonnet-5": "down"
+      },
+      "genre_dirs": {
+        "personal": "down",
+        "tech": "down",
+        "wiki": "down"
+      },
+      "reversed_somewhere": true,
+      "q_by": 1.0,
+      "unique_hits_full": []
+    },
+    {
+      "key": "punct_per_1k",
+      "no": 6,
+      "name": "1,000자당 문장부호",
+      "research": "down",
+      "n_h": 27,
+      "n_ai": 27,
+      "median_h": 50.632911,
+      "median_ai": 48.551612,
+      "p_ai_gt_h": 0.522633744855967,
+      "p": 0.7819339694453145,
+      "observed": "down",
+      "direction": "down",
+      "direction_from_sample": false,
+      "agrees_with_research": true,
+      "hits_full": [],
+      "val_human_over": [
+        "tech-01"
+      ],
+      "hits_split": [],
+      "model_dirs": {
+        "claude-opus-5": "down",
+        "claude-sonnet-5": "down"
+      },
+      "genre_dirs": {
+        "personal": "down",
+        "tech": "up",
+        "wiki": "up"
+      },
+      "reversed_somewhere": true,
+      "q_by": 1.0,
+      "unique_hits_full": []
+    },
+    {
+      "key": "spacing_adherence",
+      "no": 7,
+      "name": "의존명사·보조 용언 앞 띄어쓰기 비율",
+      "research": "up",
+      "n_h": 27,
+      "n_ai": 27,
+      "median_h": 0.84375,
+      "median_ai": 0.933333,
+      "p_ai_gt_h": 0.7908093278463649,
+      "p": 0.0002447487342865197,
+      "observed": "up",
+      "direction": "up",
+      "direction_from_sample": false,
+      "agrees_with_research": true,
+      "hits_full": [],
+      "val_human_over": [],
+      "hits_split": [],
+      "model_dirs": {
+        "claude-opus-5": "up",
+        "claude-sonnet-5": "up"
+      },
+      "genre_dirs": {
+        "personal": "up",
+        "tech": "up",
+        "wiki": "up"
+      },
+      "reversed_somewhere": false,
+      "q_by": 0.02094335986740155,
+      "unique_hits_full": []
+    },
+    {
+      "key": "mattr",
+      "no": 8,
+      "name": "형태소 MATTR(창 100)",
+      "research": "both",
+      "n_h": 27,
+      "n_ai": 27,
+      "median_h": 0.690454,
+      "median_ai": 0.730853,
+      "p_ai_gt_h": 0.8161865569272977,
+      "p": 6.920731163604286e-05,
+      "observed": "up",
+      "direction": "up",
+      "direction_from_sample": true,
+      "agrees_with_research": true,
+      "hits_full": [
+        "ai-personal-01",
+        "ai-personal-06",
+        "ai-tech-02",
+        "ai-tech-06",
+        "ai-tech-07",
+        "ai-tech-08",
+        "ai-tech-10"
+      ],
+      "val_human_over": [],
+      "hits_split": [
+        "ai-personal-01",
+        "ai-personal-06",
+        "ai-tech-02",
+        "ai-tech-06",
+        "ai-tech-07",
+        "ai-tech-08",
+        "ai-tech-10"
+      ],
+      "model_dirs": {
+        "claude-opus-5": "up",
+        "claude-sonnet-5": "up"
+      },
+      "genre_dirs": {
+        "personal": "up",
+        "tech": "up",
+        "wiki": "up"
+      },
+      "reversed_somewhere": false,
+      "q_by": 0.011844258457755667,
+      "unique_hits_full": [
+        "ai-personal-01",
+        "ai-tech-02",
+        "ai-tech-07",
+        "ai-tech-10"
+      ]
+    },
+    {
+      "key": "lexical_density",
+      "no": 9,
+      "name": "내용 형태소 비율",
+      "research": "down",
+      "n_h": 27,
+      "n_ai": 27,
+      "median_h": 0.401954,
+      "median_ai": 0.433581,
+      "p_ai_gt_h": 0.7558299039780522,
+      "p": 0.0012917982342381328,
+      "observed": "up",
+      "direction": "down",
+      "direction_from_sample": false,
+      "agrees_with_research": false,
+      "hits_full": [],
+      "val_human_over": [
+        "personal-07",
+        "tech-02"
+      ],
+      "hits_split": [],
+      "model_dirs": {
+        "claude-opus-5": "up",
+        "claude-sonnet-5": "up"
+      },
+      "genre_dirs": {
+        "personal": "up",
+        "tech": "up",
+        "wiki": "up"
+      },
+      "reversed_somewhere": true,
+      "q_by": 0.0736935245707982,
+      "unique_hits_full": []
+    },
+    {
+      "key": "pos_ngram_div",
+      "no": 11,
+      "name": "품사 1~5-gram 종류÷전체 평균",
+      "research": "down",
+      "n_h": 27,
+      "n_ai": 27,
+      "median_h": 0.452817,
+      "median_ai": 0.455052,
+      "p_ai_gt_h": 0.522633744855967,
+      "p": 0.7819339694453145,
+      "observed": "up",
+      "direction": "down",
+      "direction_from_sample": false,
+      "agrees_with_research": false,
+      "hits_full": [],
+      "val_human_over": [],
+      "hits_split": [],
+      "model_dirs": {
+        "claude-opus-5": "up",
+        "claude-sonnet-5": "down"
+      },
+      "genre_dirs": {
+        "personal": "up",
+        "tech": "up",
+        "wiki": "down"
+      },
+      "reversed_somewhere": true,
+      "q_by": 1.0,
+      "unique_hits_full": []
+    },
+    {
+      "key": "noun_ratio",
+      "no": 16,
+      "name": "명사 비율",
+      "research": "down",
+      "n_h": 27,
+      "n_ai": 27,
+      "median_h": 0.290735,
+      "median_ai": 0.319598,
+      "p_ai_gt_h": 0.6008230452674898,
+      "p": 0.2066257355790212,
+      "observed": "up",
+      "direction": "down",
+      "direction_from_sample": false,
+      "agrees_with_research": false,
+      "hits_full": [
+        "ai-personal-08"
+      ],
+      "val_human_over": [
+        "personal-06",
+        "personal-07",
+        "tech-02"
+      ],
+      "hits_split": [
+        "ai-personal-04",
+        "ai-personal-08",
+        "ai-tech-08"
+      ],
+      "model_dirs": {
+        "claude-opus-5": "up",
+        "claude-sonnet-5": "up"
+      },
+      "genre_dirs": {
+        "personal": "down",
+        "tech": "up",
+        "wiki": "up"
+      },
+      "reversed_somewhere": true,
+      "q_by": 1.0,
+      "unique_hits_full": []
+    },
+    {
+      "key": "adj_ratio",
+      "no": 16,
+      "name": "형용사 비율",
+      "research": "down",
+      "n_h": 27,
+      "n_ai": 27,
+      "median_h": 0.016841,
+      "median_ai": 0.021042,
+      "p_ai_gt_h": 0.6172839506172839,
+      "p": 0.1414269254304018,
+      "observed": "up",
+      "direction": "down",
+      "direction_from_sample": false,
+      "agrees_with_research": false,
+      "hits_full": [
+        "ai-wiki-06",
+        "ai-wiki-09"
+      ],
+      "val_human_over": [
+        "wiki-07"
+      ],
+      "hits_split": [
+        "ai-wiki-02",
+        "ai-wiki-03",
+        "ai-wiki-06",
+        "ai-wiki-09"
+      ],
+      "model_dirs": {
+        "claude-opus-5": "up",
+        "claude-sonnet-5": "up"
+      },
+      "genre_dirs": {
+        "personal": "up",
+        "tech": "up",
+        "wiki": "up"
+      },
+      "reversed_somewhere": true,
+      "q_by": 1.0,
+      "unique_hits_full": []
+    },
+    {
+      "key": "adnominal_per_1k",
+      "no": 16,
+      "name": "1,000형태소당 관형형 어미·관형사",
+      "research": "down",
+      "n_h": 27,
+      "n_ai": 27,
+      "median_h": 71.599045,
+      "median_ai": 67.010309,
+      "p_ai_gt_h": 0.4993141289437586,
+      "p": 1.0,
+      "observed": "down",
+      "direction": "down",
+      "direction_from_sample": false,
+      "agrees_with_research": true,
+      "hits_full": [],
+      "val_human_over": [],
+      "hits_split": [],
+      "model_dirs": {
+        "claude-opus-5": "down",
+        "claude-sonnet-5": "up"
+      },
+      "genre_dirs": {
+        "personal": "up",
+        "tech": "down",
+        "wiki": "up"
+      },
+      "reversed_somewhere": true,
+      "q_by": 1.0,
+      "unique_hits_full": []
+    },
+    {
+      "key": "nominalization_per_1k",
+      "no": 17,
+      "name": "1,000형태소당 -성·-화·명사형 어미",
+      "research": "up",
+      "n_h": 27,
+      "n_ai": 27,
+      "median_h": 8.261837,
+      "median_ai": 6.134969,
+      "p_ai_gt_h": 0.3950617283950617,
+      "p": 0.18857772691871733,
+      "observed": "down",
+      "direction": "up",
+      "direction_from_sample": false,
+      "agrees_with_research": false,
+      "hits_full": [
+        "ai-tech-06",
+        "ai-tech-08"
+      ],
+      "val_human_over": [],
+      "hits_split": [
+        "ai-tech-06",
+        "ai-tech-08"
+      ],
+      "model_dirs": {
+        "claude-opus-5": "down",
+        "claude-sonnet-5": "down"
+      },
+      "genre_dirs": {
+        "personal": "down",
+        "tech": "down",
+        "wiki": "up"
+      },
+      "reversed_somewhere": true,
+      "q_by": 1.0,
+      "unique_hits_full": []
+    },
+    {
+      "key": "aux_per_1k",
+      "no": 18,
+      "name": "1,000형태소당 보조 용언",
+      "research": "up",
+      "n_h": 27,
+      "n_ai": 27,
+      "median_h": 23.028611,
+      "median_ai": 22.08589,
+      "p_ai_gt_h": 0.4458161865569273,
+      "p": 0.499866966038077,
+      "observed": "down",
+      "direction": "up",
+      "direction_from_sample": false,
+      "agrees_with_research": false,
+      "hits_full": [],
+      "val_human_over": [],
+      "hits_split": [],
+      "model_dirs": {
+        "claude-opus-5": "down",
+        "claude-sonnet-5": "down"
+      },
+      "genre_dirs": {
+        "personal": "down",
+        "tech": "up",
+        "wiki": "up"
+      },
+      "reversed_somewhere": true,
+      "q_by": 1.0,
+      "unique_hits_full": []
+    },
+    {
+      "key": "pronoun_per_1k",
+      "no": 19,
+      "name": "1,000형태소당 대명사",
+      "research": "up",
+      "n_h": 27,
+      "n_ai": 27,
+      "median_h": 3.710575,
+      "median_ai": 3.449465,
+      "p_ai_gt_h": 0.4849108367626886,
+      "p": 0.8558277036639123,
+      "observed": "down",
+      "direction": "up",
+      "direction_from_sample": false,
+      "agrees_with_research": false,
+      "hits_full": [
+        "ai-personal-08"
+      ],
+      "val_human_over": [],
+      "hits_split": [
+        "ai-personal-08"
+      ],
+      "model_dirs": {
+        "claude-opus-5": "down",
+        "claude-sonnet-5": "down"
+      },
+      "genre_dirs": {
+        "personal": "down",
+        "tech": "down",
+        "wiki": "up"
+      },
+      "reversed_somewhere": true,
+      "q_by": 1.0,
+      "unique_hits_full": []
+    },
+    {
+      "key": "num_symbol_per_1k",
+      "no": 20,
+      "name": "1,000자당 숫자·기호",
+      "research": "up",
+      "n_h": 27,
+      "n_ai": 27,
+      "median_h": 6.344558,
+      "median_ai": 4.778973,
+      "p_ai_gt_h": 0.35939643347050754,
+      "p": 0.07751829755234732,
+      "observed": "down",
+      "direction": "up",
+      "direction_from_sample": false,
+      "agrees_with_research": false,
+      "hits_full": [],
+      "val_human_over": [
+        "wiki-06",
+        "wiki-10"
+      ],
+      "hits_split": [],
+      "model_dirs": {
+        "claude-opus-5": "up",
+        "claude-sonnet-5": "down"
+      },
+      "genre_dirs": {
+        "personal": "down",
+        "tech": "down",
+        "wiki": "down"
+      },
+      "reversed_somewhere": true,
+      "q_by": 1.0,
+      "unique_hits_full": []
+    },
+    {
+      "key": "jkg_per_1k",
+      "no": 21,
+      "name": "1,000형태소당 관형격 조사 -의",
+      "research": "up",
+      "n_h": 27,
+      "n_ai": 27,
+      "median_h": 19.710907,
+      "median_ai": 14.569536,
+      "p_ai_gt_h": 0.4156378600823045,
+      "p": 0.29128879549601105,
+      "observed": "down",
+      "direction": "up",
+      "direction_from_sample": false,
+      "agrees_with_research": false,
+      "hits_full": [],
+      "val_human_over": [
+        "wiki-10",
+        "wiki-08",
+        "wiki-07"
+      ],
+      "hits_split": [],
+      "model_dirs": {
+        "claude-opus-5": "down",
+        "claude-sonnet-5": "down"
+      },
+      "genre_dirs": {
+        "personal": "up",
+        "tech": "down",
+        "wiki": "down"
+      },
+      "reversed_somewhere": true,
+      "q_by": 1.0,
+      "unique_hits_full": []
+    },
+    {
+      "key": "topic_share",
+      "no": 22,
+      "name": "은/는 ÷ (은/는 + 이/가)",
+      "research": "up",
+      "n_h": 27,
+      "n_ai": 27,
+      "median_h": 0.5,
+      "median_ai": 0.5,
+      "p_ai_gt_h": 0.5164609053497943,
+      "p": 0.8422664633599074,
+      "observed": "none",
+      "direction": "up",
+      "direction_from_sample": false,
+      "agrees_with_research": false,
+      "hits_full": [
+        "ai-wiki-02"
+      ],
+      "val_human_over": [
+        "wiki-01"
+      ],
+      "hits_split": [
+        "ai-wiki-02",
+        "ai-wiki-07"
+      ],
+      "model_dirs": {
+        "claude-opus-5": "down",
+        "claude-sonnet-5": "up"
+      },
+      "genre_dirs": {
+        "personal": "up",
+        "tech": "down",
+        "wiki": "up"
+      },
+      "reversed_somewhere": true,
+      "q_by": 1.0,
+      "unique_hits_full": []
+    },
+    {
+      "key": "geot_ttaemun_per_1k",
+      "no": 23,
+      "name": "1,000형태소당 것/거·때문",
+      "research": "up",
+      "n_h": 27,
+      "n_ai": 27,
+      "median_h": 7.159905,
+      "median_ai": 3.680982,
+      "p_ai_gt_h": 0.44170096021947874,
+      "p": 0.46742919917646164,
+      "observed": "down",
+      "direction": "up",
+      "direction_from_sample": false,
+      "agrees_with_research": false,
+      "hits_full": [],
+      "val_human_over": [
+        "personal-03",
+        "personal-05",
+        "wiki-08"
+      ],
+      "hits_split": [
+        "ai-personal-04",
+        "ai-personal-06",
+        "ai-tech-08"
+      ],
+      "model_dirs": {
+        "claude-opus-5": "down",
+        "claude-sonnet-5": "down"
+      },
+      "genre_dirs": {
+        "personal": "up",
+        "tech": "down",
+        "wiki": "down"
+      },
+      "reversed_somewhere": true,
+      "q_by": 1.0,
+      "unique_hits_full": []
+    },
+    {
+      "key": "sent_len",
+      "no": 24,
+      "name": "문장당 어절 수",
+      "research": "down",
+      "n_h": 27,
+      "n_ai": 27,
+      "median_h": 11.690476,
+      "median_ai": 11.269231,
+      "p_ai_gt_h": 0.4718792866941015,
+      "p": 0.7293381115230484,
+      "observed": "down",
+      "direction": "down",
+      "direction_from_sample": false,
+      "agrees_with_research": true,
+      "hits_full": [
+        "ai-personal-05"
+      ],
+      "val_human_over": [],
+      "hits_split": [
+        "ai-personal-05"
+      ],
+      "model_dirs": {
+        "claude-opus-5": "down",
+        "claude-sonnet-5": "up"
+      },
+      "genre_dirs": {
+        "personal": "up",
+        "tech": "down",
+        "wiki": "up"
+      },
+      "reversed_somewhere": true,
+      "q_by": 1.0,
+      "unique_hits_full": [
+        "ai-personal-05"
+      ]
+    },
+    {
+      "key": "sent_len_cv",
+      "no": 25,
+      "name": "문장 길이 변동계수",
+      "research": "down",
+      "n_h": 27,
+      "n_ai": 27,
+      "median_h": 0.559665,
+      "median_ai": 0.471509,
+      "p_ai_gt_h": 0.25651577503429357,
+      "p": 0.0021979306172749185,
+      "observed": "down",
+      "direction": "down",
+      "direction_from_sample": false,
+      "agrees_with_research": true,
+      "hits_full": [
+        "ai-wiki-02",
+        "ai-wiki-03",
+        "ai-wiki-06",
+        "ai-wiki-08",
+        "ai-wiki-09",
+        "ai-wiki-10"
+      ],
+      "val_human_over": [
+        "wiki-07"
+      ],
+      "hits_split": [
+        "ai-wiki-01",
+        "ai-wiki-02",
+        "ai-wiki-03",
+        "ai-wiki-06",
+        "ai-wiki-08",
+        "ai-wiki-09",
+        "ai-wiki-10"
+      ],
+      "model_dirs": {
+        "claude-opus-5": "down",
+        "claude-sonnet-5": "down"
+      },
+      "genre_dirs": {
+        "personal": "down",
+        "tech": "down",
+        "wiki": "down"
+      },
+      "reversed_somewhere": false,
+      "q_by": 0.09403940742606735,
+      "unique_hits_full": [
+        "ai-wiki-03",
+        "ai-wiki-08"
+      ]
+    },
+    {
+      "key": "clauses_per_sent",
+      "no": 26,
+      "name": "문장당 연결어미(보조 용언 앞 제외)",
+      "research": "up",
+      "n_h": 27,
+      "n_ai": 27,
+      "median_h": 1.157895,
+      "median_ai": 1.083333,
+      "p_ai_gt_h": 0.46502057613168724,
+      "p": 0.6653485265635539,
+      "observed": "down",
+      "direction": "up",
+      "direction_from_sample": false,
+      "agrees_with_research": false,
+      "hits_full": [],
+      "val_human_over": [],
+      "hits_split": [],
+      "model_dirs": {
+        "claude-opus-5": "down",
+        "claude-sonnet-5": "up"
+      },
+      "genre_dirs": {
+        "personal": "up",
+        "tech": "down",
+        "wiki": "none"
+      },
+      "reversed_somewhere": true,
+      "q_by": 1.0,
+      "unique_hits_full": []
+    },
+    {
+      "key": "dep_distance",
+      "no": 27,
+      "name": "평균 의존 거리(어절)",
+      "research": "up",
+      "n_h": 27,
+      "n_ai": 27,
+      "median_h": 2.747433,
+      "median_ai": 2.562044,
+      "p_ai_gt_h": 0.3991769547325103,
+      "p": 0.2066257355790212,
+      "observed": "down",
+      "direction": "up",
+      "direction_from_sample": false,
+      "agrees_with_research": false,
+      "hits_full": [
+        "ai-wiki-06"
+      ],
+      "val_human_over": [],
+      "hits_split": [
+        "ai-wiki-06"
+      ],
+      "model_dirs": {
+        "claude-opus-5": "down",
+        "claude-sonnet-5": "down"
+      },
+      "genre_dirs": {
+        "personal": "down",
+        "tech": "down",
+        "wiki": "up"
+      },
+      "reversed_somewhere": true,
+      "q_by": 1.0,
+      "unique_hits_full": []
+    },
+    {
+      "key": "coord_per_1k",
+      "no": 28,
+      "name": "1,000형태소당 접속 조사와 '및'",
+      "research": "both",
+      "n_h": 27,
+      "n_ai": 27,
+      "median_h": 5.042017,
+      "median_ai": 10.19368,
+      "p_ai_gt_h": 0.7187928669410151,
+      "p": 0.005945923869164793,
+      "observed": "up",
+      "direction": "up",
+      "direction_from_sample": true,
+      "agrees_with_research": true,
+      "hits_full": [
+        "ai-wiki-01",
+        "ai-personal-02"
+      ],
+      "val_human_over": [
+        "wiki-01",
+        "wiki-08",
+        "wiki-07"
+      ],
+      "hits_split": [
+        "ai-wiki-01",
+        "ai-wiki-02",
+        "ai-wiki-03",
+        "ai-wiki-06",
+        "ai-personal-02",
+        "ai-wiki-09",
+        "ai-wiki-10",
+        "ai-tech-02"
+      ],
+      "model_dirs": {
+        "claude-opus-5": "up",
+        "claude-sonnet-5": "up"
+      },
+      "genre_dirs": {
+        "personal": "up",
+        "tech": "up",
+        "wiki": "up"
+      },
+      "reversed_somewhere": false,
+      "q_by": 0.16959927453640447,
+      "unique_hits_full": [
+        "ai-personal-02",
+        "ai-wiki-01"
+      ]
+    },
+    {
+      "key": "long_causative_per_1k",
+      "no": 29,
+      "name": "1,000형태소당 -게 하다/만들다",
+      "research": "up",
+      "n_h": 27,
+      "n_ai": 27,
+      "median_h": 0.0,
+      "median_ai": 0.0,
+      "p_ai_gt_h": 0.5068587105624143,
+      "p": 0.9231721642183902,
+      "observed": "none",
+      "direction": "up",
+      "direction_from_sample": false,
+      "agrees_with_research": false,
+      "hits_full": [],
+      "val_human_over": [
+        "personal-10",
+        "personal-05"
+      ],
+      "hits_split": [
+        "ai-personal-01",
+        "ai-personal-06",
+        "ai-tech-07"
+      ],
+      "model_dirs": {
+        "claude-opus-5": "none",
+        "claude-sonnet-5": "none"
+      },
+      "genre_dirs": {
+        "personal": "none",
+        "tech": "none",
+        "wiki": "none"
+      },
+      "reversed_somewhere": false,
+      "q_by": 1.0,
+      "unique_hits_full": []
+    },
+    {
+      "key": "short_neg_share",
+      "no": 30,
+      "name": "안/못 ÷ (안/못 + -지 않다/못하다)",
+      "research": "down",
+      "n_h": 19,
+      "n_ai": 20,
+      "median_h": 0.166667,
+      "median_ai": 0.0,
+      "p_ai_gt_h": 0.3671052631578947,
+      "p": 0.12039520264978006,
+      "observed": "down",
+      "direction": "down",
+      "direction_from_sample": false,
+      "agrees_with_research": true,
+      "hits_full": [],
+      "val_human_over": [],
+      "hits_split": [],
+      "model_dirs": {
+        "claude-opus-5": "down",
+        "claude-sonnet-5": "down"
+      },
+      "genre_dirs": {
+        "personal": "down",
+        "tech": "none",
+        "wiki": "none"
+      },
+      "reversed_somewhere": false,
+      "q_by": 1.0,
+      "unique_hits_full": []
+    },
+    {
+      "key": "modal_per_1k",
+      "no": 31,
+      "name": "1,000형태소당 -ㄹ 수 있다/없다, -아야 하다/되다",
+      "research": "down",
+      "n_h": 27,
+      "n_ai": 27,
+      "median_h": 4.77327,
+      "median_ai": 5.91716,
+      "p_ai_gt_h": 0.5500685871056241,
+      "p": 0.5329790476655212,
+      "observed": "up",
+      "direction": "down",
+      "direction_from_sample": false,
+      "agrees_with_research": false,
+      "hits_full": [],
+      "val_human_over": [],
+      "hits_split": [],
+      "model_dirs": {
+        "claude-opus-5": "up",
+        "claude-sonnet-5": "up"
+      },
+      "genre_dirs": {
+        "personal": "up",
+        "tech": "up",
+        "wiki": "down"
+      },
+      "reversed_somewhere": true,
+      "q_by": 1.0,
+      "unique_hits_full": []
+    },
+    {
+      "key": "epistemic_per_1k",
+      "no": 32,
+      "name": "1,000형태소당 인식 표지",
+      "research": "down",
+      "n_h": 27,
+      "n_ai": 27,
+      "median_h": 0.0,
+      "median_ai": 0.0,
+      "p_ai_gt_h": 0.4567901234567901,
+      "p": 0.4611568099165939,
+      "observed": "none",
+      "direction": "down",
+      "direction_from_sample": false,
+      "agrees_with_research": false,
+      "hits_full": [],
+      "val_human_over": [],
+      "hits_split": [],
+      "model_dirs": {
+        "claude-opus-5": "none",
+        "claude-sonnet-5": "none"
+      },
+      "genre_dirs": {
+        "personal": "none",
+        "tech": "none",
+        "wiki": "none"
+      },
+      "reversed_somewhere": false,
+      "q_by": 1.0,
+      "unique_hits_full": []
+    },
+    {
+      "key": "discourse_per_1k",
+      "no": 33,
+      "name": "1,000형태소당 담화 표지",
+      "research": "down",
+      "n_h": 27,
+      "n_ai": 27,
+      "median_h": 0.0,
+      "median_ai": 0.0,
+      "p_ai_gt_h": 0.49588477366255146,
+      "p": 0.9526071871787785,
+      "observed": "none",
+      "direction": "down",
+      "direction_from_sample": false,
+      "agrees_with_research": false,
+      "hits_full": [],
+      "val_human_over": [],
+      "hits_split": [],
+      "model_dirs": {
+        "claude-opus-5": "none",
+        "claude-sonnet-5": "none"
+      },
+      "genre_dirs": {
+        "personal": "none",
+        "tech": "none",
+        "wiki": "none"
+      },
+      "reversed_somewhere": false,
+      "q_by": 1.0,
+      "unique_hits_full": []
+    },
+    {
+      "key": "downtoner_per_1k",
+      "no": 34,
+      "name": "1,000형태소당 완화어",
+      "research": "up",
+      "n_h": 27,
+      "n_ai": 27,
+      "median_h": 0.0,
+      "median_ai": 0.0,
+      "p_ai_gt_h": 0.4348422496570645,
+      "p": 0.23014013657914079,
+      "observed": "none",
+      "direction": "up",
+      "direction_from_sample": false,
+      "agrees_with_research": false,
+      "hits_full": [
+        "ai-personal-04",
+        "ai-tech-08"
+      ],
+      "val_human_over": [
+        "personal-06",
+        "tech-02"
+      ],
+      "hits_split": [
+        "ai-personal-04",
+        "ai-tech-08"
+      ],
+      "model_dirs": {
+        "claude-opus-5": "none",
+        "claude-sonnet-5": "none"
+      },
+      "genre_dirs": {
+        "personal": "none",
+        "tech": "none",
+        "wiki": "none"
+      },
+      "reversed_somewhere": false,
+      "q_by": 1.0,
+      "unique_hits_full": [
+        "ai-personal-04"
+      ]
+    },
+    {
+      "key": "degree_adv_per_1k",
+      "no": 35,
+      "name": "1,000형태소당 가장·매우·아주·너무",
+      "research": "up",
+      "n_h": 27,
+      "n_ai": 27,
+      "median_h": 1.395673,
+      "median_ai": 2.28833,
+      "p_ai_gt_h": 0.5569272976680384,
+      "p": 0.47115931290593305,
+      "observed": "up",
+      "direction": "up",
+      "direction_from_sample": false,
+      "agrees_with_research": true,
+      "hits_full": [
+        "ai-personal-07"
+      ],
+      "val_human_over": [
+        "personal-10",
+        "tech-07",
+        "tech-10"
+      ],
+      "hits_split": [
+        "ai-personal-05",
+        "ai-personal-06",
+        "ai-personal-07"
+      ],
+      "model_dirs": {
+        "claude-opus-5": "up",
+        "claude-sonnet-5": "up"
+      },
+      "genre_dirs": {
+        "personal": "up",
+        "tech": "up",
+        "wiki": "none"
+      },
+      "reversed_somewhere": false,
+      "q_by": 1.0,
+      "unique_hits_full": [
+        "ai-personal-07"
+      ]
+    },
+    {
+      "key": "example_emphasis_share",
+      "no": 36,
+      "name": "예시·강조 ÷ (예시·강조 + 조건) 접속 표현",
+      "research": "up",
+      "n_h": 9,
+      "n_ai": 19,
+      "median_h": 1.0,
+      "median_ai": 1.0,
+      "p_ai_gt_h": 0.6052631578947368,
+      "p": 0.197154850991886,
+      "observed": "none",
+      "direction": "up",
+      "direction_from_sample": false,
+      "agrees_with_research": false,
+      "hits_full": [],
+      "val_human_over": [],
+      "hits_split": [],
+      "model_dirs": {
+        "claude-opus-5": "none",
+        "claude-sonnet-5": "none"
+      },
+      "genre_dirs": {
+        "personal": "none",
+        "tech": "up",
+        "wiki": "none"
+      },
+      "reversed_somewhere": false,
+      "q_by": 1.0,
+      "unique_hits_full": []
+    },
+    {
+      "key": "contrast_share",
+      "no": 37,
+      "name": "그러나·하지만 ÷ (그러나·하지만 + 그런데)",
+      "research": "up",
+      "n_h": 15,
+      "n_ai": 13,
+      "median_h": 1.0,
+      "median_ai": 1.0,
+      "p_ai_gt_h": 0.5102564102564102,
+      "p": 0.9305971621651474,
+      "observed": "none",
+      "direction": "up",
+      "direction_from_sample": false,
+      "agrees_with_research": false,
+      "hits_full": [],
+      "val_human_over": [],
+      "hits_split": [],
+      "model_dirs": {
+        "claude-opus-5": "down",
+        "claude-sonnet-5": "none"
+      },
+      "genre_dirs": {
+        "personal": "down",
+        "tech": "none",
+        "wiki": "none"
+      },
+      "reversed_somewhere": true,
+      "q_by": 1.0,
+      "unique_hits_full": []
+    },
+    {
+      "key": "translationese_verbs_per_1k",
+      "no": 39,
+      "name": "1,000형태소당 대하다·의하다·만들다·가지다",
+      "research": "up",
+      "n_h": 27,
+      "n_ai": 27,
+      "median_h": 3.942181,
+      "median_ai": 2.04499,
+      "p_ai_gt_h": 0.27503429355281206,
+      "p": 0.00464769315799416,
+      "observed": "down",
+      "direction": "up",
+      "direction_from_sample": false,
+      "agrees_with_research": false,
+      "hits_full": [],
+      "val_human_over": [
+        "personal-03",
+        "personal-07",
+        "wiki-01",
+        "wiki-08"
+      ],
+      "hits_split": [],
+      "model_dirs": {
+        "claude-opus-5": "down",
+        "claude-sonnet-5": "down"
+      },
+      "genre_dirs": {
+        "personal": "down",
+        "tech": "down",
+        "wiki": "down"
+      },
+      "reversed_somewhere": true,
+      "q_by": 0.15908284166598508,
+      "unique_hits_full": []
+    },
+    {
+      "key": "passive_per_1k",
+      "no": 40,
+      "name": "1,000형태소당 -아/어 지다와 -에 의하여",
+      "research": "both",
+      "n_h": 27,
+      "n_ai": 27,
+      "median_h": 2.057613,
+      "median_ai": 2.340094,
+      "p_ai_gt_h": 0.546639231824417,
+      "p": 0.5600646544323127,
+      "observed": "up",
+      "direction": "up",
+      "direction_from_sample": true,
+      "agrees_with_research": true,
+      "hits_full": [],
+      "val_human_over": [],
+      "hits_split": [],
+      "model_dirs": {
+        "claude-opus-5": "up",
+        "claude-sonnet-5": "up"
+      },
+      "genre_dirs": {
+        "personal": "up",
+        "tech": "up",
+        "wiki": "down"
+      },
+      "reversed_somewhere": true,
+      "q_by": 1.0,
+      "unique_hits_full": []
+    },
+    {
+      "key": "tonghada_per_1k",
+      "no": 41,
+      "name": "1,000형태소당 통하다",
+      "research": "down",
+      "n_h": 27,
+      "n_ai": 27,
+      "median_h": 0.0,
+      "median_ai": 0.0,
+      "p_ai_gt_h": 0.46296296296296297,
+      "p": 0.5847507373124601,
+      "observed": "none",
+      "direction": "down",
+      "direction_from_sample": false,
+      "agrees_with_research": false,
+      "hits_full": [],
+      "val_human_over": [],
+      "hits_split": [],
+      "model_dirs": {
+        "claude-opus-5": "none",
+        "claude-sonnet-5": "none"
+      },
+      "genre_dirs": {
+        "personal": "down",
+        "tech": "down",
+        "wiki": "none"
+      },
+      "reversed_somewhere": false,
+      "q_by": 1.0,
+      "unique_hits_full": []
+    },
+    {
+      "key": "honorific_ep_per_1k",
+      "no": 42,
+      "name": "1,000형태소당 선어말 어미 -(으)시-",
+      "research": "down",
+      "n_h": 27,
+      "n_ai": 27,
+      "median_h": 0.0,
+      "median_ai": 0.0,
+      "p_ai_gt_h": 0.40877914951989025,
+      "p": 0.1278811457635179,
+      "observed": "none",
+      "direction": "down",
+      "direction_from_sample": false,
+      "agrees_with_research": false,
+      "hits_full": [],
+      "val_human_over": [],
+      "hits_split": [],
+      "model_dirs": {
+        "claude-opus-5": "none",
+        "claude-sonnet-5": "none"
+      },
+      "genre_dirs": {
+        "personal": "down",
+        "tech": "none",
+        "wiki": "none"
+      },
+      "reversed_somewhere": false,
+      "q_by": 1.0,
+      "unique_hits_full": []
+    },
+    {
+      "key": "demonstrative_per_1k",
+      "no": 43,
+      "name": "1,000형태소당 지시 관형사·지시 대명사",
+      "research": "both",
+      "n_h": 27,
+      "n_ai": 27,
+      "median_h": 4.884857,
+      "median_ai": 5.494505,
+      "p_ai_gt_h": 0.5445816186556928,
+      "p": 0.5797086200032311,
+      "observed": "up",
+      "direction": "up",
+      "direction_from_sample": true,
+      "agrees_with_research": true,
+      "hits_full": [
+        "ai-personal-06"
+      ],
+      "val_human_over": [],
+      "hits_split": [
+        "ai-personal-06"
+      ],
+      "model_dirs": {
+        "claude-opus-5": "up",
+        "claude-sonnet-5": "up"
+      },
+      "genre_dirs": {
+        "personal": "up",
+        "tech": "up",
+        "wiki": "down"
+      },
+      "reversed_somewhere": true,
+      "q_by": 1.0,
+      "unique_hits_full": []
+    },
+    {
+      "key": "quote_per_1k",
+      "no": 43,
+      "name": "1,000형태소당 인용격 조사",
+      "research": "both",
+      "n_h": 27,
+      "n_ai": 27,
+      "median_h": 0.0,
+      "median_ai": 0.0,
+      "p_ai_gt_h": 0.5795610425240055,
+      "p": 0.10748353316928011,
+      "observed": "none",
+      "direction": "none",
+      "direction_from_sample": true,
+      "agrees_with_research": true,
+      "hits_full": [],
+      "val_human_over": [],
+      "hits_split": [],
+      "model_dirs": {
+        "claude-opus-5": "none",
+        "claude-sonnet-5": "none"
+      },
+      "genre_dirs": {
+        "personal": "none",
+        "tech": "none",
+        "wiki": "none"
+      },
+      "reversed_somewhere": false,
+      "q_by": 1.0,
+      "unique_hits_full": []
+    }
+  ],
+  "explore": {
+    "lemmas": {
+      "no": 10,
+      "ai_over": [
+        {
+          "item": "쓰/VV",
+          "z": 4.35,
+          "count_ai": 49,
+          "count_h": 11,
+          "docs_ai": 15,
+          "docs_h": 7
+        },
+        {
+          "item": "사가/NNG",
+          "z": 4.05,
+          "count_ai": 40,
+          "count_h": 8,
+          "docs_ai": 1,
+          "docs_h": 1
+        },
+        {
+          "item": "빌/NNP",
+          "z": 3.68,
+          "count_ai": 32,
+          "count_h": 6,
+          "docs_ai": 5,
+          "docs_h": 2
+        },
+        {
+          "item": "드/NNG",
+          "z": 3.68,
+          "count_ai": 32,
+          "count_h": 6,
+          "docs_ai": 5,
+          "docs_h": 2
+        },
+        {
+          "item": "아이템/NNG",
+          "z": 3.57,
+          "count_ai": 29,
+          "count_h": 0,
+          "docs_ai": 1,
+          "docs_h": 0
+        },
+        {
+          "item": "지원/NNG",
+          "z": 3.52,
+          "count_ai": 40,
+          "count_h": 12,
+          "docs_ai": 10,
+          "docs_h": 7
+        },
+        {
+          "item": "체계/NNG",
+          "z": 3.25,
+          "count_ai": 21,
+          "count_h": 1,
+          "docs_ai": 7,
+          "docs_h": 1
+        },
+        {
+          "item": "전체/NNG",
+          "z": 3.25,
+          "count_ai": 21,
+          "count_h": 1,
+          "docs_ai": 10,
+          "docs_h": 1
+        },
+        {
+          "item": "안/NNG",
+          "z": 2.97,
+          "count_ai": 21,
+          "count_h": 4,
+          "docs_ai": 13,
+          "docs_h": 3
+        },
+        {
+          "item": "실패/NNG",
+          "z": 2.9,
+          "count_ai": 22,
+          "count_h": 5,
+          "docs_ai": 6,
+          "docs_h": 4
+        },
+        {
+          "item": "값/NNG",
+          "z": 2.88,
+          "count_ai": 33,
+          "count_h": 12,
+          "docs_ai": 8,
+          "docs_h": 4
+        },
+        {
+          "item": "고르/VV",
+          "z": 2.85,
+          "count_ai": 16,
+          "count_h": 1,
+          "docs_ai": 8,
+          "docs_h": 1
+        },
+        {
+          "item": "특히/MAG",
+          "z": 2.76,
+          "count_ai": 24,
+          "count_h": 7,
+          "docs_ai": 12,
+          "docs_h": 3
+        },
+        {
+          "item": "대표/NNG",
+          "z": 2.76,
+          "count_ai": 19,
+          "count_h": 4,
+          "docs_ai": 9,
+          "docs_h": 4
+        },
+        {
+          "item": "체크/NNG",
+          "z": 2.66,
+          "count_ai": 14,
+          "count_h": 1,
+          "docs_ai": 6,
+          "docs_h": 1
+        }
+      ],
+      "human_over": [
+        {
+          "item": "사용/NNG",
+          "z": -6.33,
+          "count_ai": 17,
+          "count_h": 92,
+          "docs_ai": 9,
+          "docs_h": 19
+        },
+        {
+          "item": "하/VV",
+          "z": -5.79,
+          "count_ai": 45,
+          "count_h": 126,
+          "docs_ai": 21,
+          "docs_h": 25
+        },
+        {
+          "item": "개발/NNG",
+          "z": -4.87,
+          "count_ai": 14,
+          "count_h": 61,
+          "docs_ai": 9,
+          "docs_h": 14
+        },
+        {
+          "item": "대하/VV",
+          "z": -4.53,
+          "count_ai": 19,
+          "count_h": 64,
+          "docs_ai": 10,
+          "docs_h": 18
+        },
+        {
+          "item": "후/NNG",
+          "z": -3.92,
+          "count_ai": 2,
+          "count_h": 30,
+          "docs_ai": 2,
+          "docs_h": 14
+        },
+        {
+          "item": "전달/NNG",
+          "z": -3.88,
+          "count_ai": 3,
+          "count_h": 30,
+          "docs_ai": 3,
+          "docs_h": 4
+        },
+        {
+          "item": "설명/NNG",
+          "z": -3.57,
+          "count_ai": 2,
+          "count_h": 25,
+          "docs_ai": 1,
+          "docs_h": 10
+        },
+        {
+          "item": "경우/NNG",
+          "z": -3.53,
+          "count_ai": 22,
+          "count_h": 55,
+          "docs_ai": 8,
+          "docs_h": 12
+        },
+        {
+          "item": "함수/NNG",
+          "z": -3.52,
+          "count_ai": 20,
+          "count_h": 52,
+          "docs_ai": 3,
+          "docs_h": 2
+        },
+        {
+          "item": "해당/NNG",
+          "z": -3.41,
+          "count_ai": 5,
+          "count_h": 27,
+          "docs_ai": 4,
+          "docs_h": 10
+        },
+        {
+          "item": "상태/NNG",
+          "z": -3.14,
+          "count_ai": 19,
+          "count_h": 46,
+          "docs_ai": 6,
+          "docs_h": 9
+        },
+        {
+          "item": "툴/NNG",
+          "z": -3.14,
+          "count_ai": 3,
+          "count_h": 21,
+          "docs_ai": 1,
+          "docs_h": 2
+        },
+        {
+          "item": "되/VV",
+          "z": -3.06,
+          "count_ai": 71,
+          "count_h": 114,
+          "docs_ai": 24,
+          "docs_h": 22
+        },
+        {
+          "item": "발생/NNG",
+          "z": -2.92,
+          "count_ai": 10,
+          "count_h": 30,
+          "docs_ai": 4,
+          "docs_h": 11
+        },
+        {
+          "item": "위하/VV",
+          "z": -2.87,
+          "count_ai": 29,
+          "count_h": 57,
+          "docs_ai": 10,
+          "docs_h": 19
+        }
+      ],
+      "human_zero": [
+        {
+          "item": "도입/NNG",
+          "docs_ai": 8
+        },
+        {
+          "item": "알림/NNG",
+          "docs_ai": 8
+        },
+        {
+          "item": "바탕/NNG",
+          "docs_ai": 7
+        },
+        {
+          "item": "사례/NNG",
+          "docs_ai": 7
+        },
+        {
+          "item": "마무리/NNG",
+          "docs_ai": 6
+        },
+        {
+          "item": "답/NNG",
+          "docs_ai": 5
+        },
+        {
+          "item": "완성도/NNG",
+          "docs_ai": 5
+        },
+        {
+          "item": "인식/NNG",
+          "docs_ai": 5
+        },
+        {
+          "item": "즉시/NNG",
+          "docs_ai": 5
+        },
+        {
+          "item": "트래픽/NNP",
+          "docs_ai": 5
+        },
+        {
+          "item": "가볍/VA",
+          "docs_ai": 4
+        },
+        {
+          "item": "경제/NNG",
+          "docs_ai": 4
+        },
+        {
+          "item": "꾸준히/MAG",
+          "docs_ai": 4
+        },
+        {
+          "item": "끝/NNG",
+          "docs_ai": 4
+        },
+        {
+          "item": "단순히/MAG",
+          "docs_ai": 4
+        }
+      ]
+    },
+    "pos_bigrams": {
+      "no": 12,
+      "ai_over": [
+        {
+          "item": "SP+NNG",
+          "z": 7.15,
+          "count_ai": 355,
+          "count_h": 206,
+          "docs_ai": 26,
+          "docs_h": 25
+        },
+        {
+          "item": "NNG+JC",
+          "z": 6.1,
+          "count_ai": 188,
+          "count_h": 94,
+          "docs_ai": 26,
+          "docs_h": 21
+        },
+        {
+          "item": "JC+NNG",
+          "z": 6.01,
+          "count_ai": 177,
+          "count_h": 87,
+          "docs_ai": 26,
+          "docs_h": 22
+        },
+        {
+          "item": "EC+SP",
+          "z": 5.54,
+          "count_ai": 260,
+          "count_h": 162,
+          "docs_ai": 26,
+          "docs_h": 25
+        },
+        {
+          "item": "NNG+NNG",
+          "z": 4.86,
+          "count_ai": 1540,
+          "count_h": 1414,
+          "docs_ai": 27,
+          "docs_h": 27
+        },
+        {
+          "item": "JKO+MAG",
+          "z": 4.52,
+          "count_ai": 77,
+          "count_h": 32,
+          "docs_ai": 21,
+          "docs_h": 17
+        },
+        {
+          "item": "NNG+JX",
+          "z": 4.5,
+          "count_ai": 456,
+          "count_h": 362,
+          "docs_ai": 27,
+          "docs_h": 27
+        },
+        {
+          "item": "VV+EF",
+          "z": 4.1,
+          "count_ai": 183,
+          "count_h": 123,
+          "docs_ai": 26,
+          "docs_h": 27
+        },
+        {
+          "item": "NNG+SP",
+          "z": 3.97,
+          "count_ai": 192,
+          "count_h": 133,
+          "docs_ai": 24,
+          "docs_h": 24
+        },
+        {
+          "item": "EF+SF",
+          "z": 3.83,
+          "count_ai": 918,
+          "count_h": 836,
+          "docs_ai": 27,
+          "docs_h": 27
+        },
+        {
+          "item": "MAG+VV",
+          "z": 3.81,
+          "count_ai": 125,
+          "count_h": 78,
+          "docs_ai": 23,
+          "docs_h": 22
+        },
+        {
+          "item": "SP+MM",
+          "z": 3.43,
+          "count_ai": 52,
+          "count_h": 24,
+          "docs_ai": 20,
+          "docs_h": 11
+        },
+        {
+          "item": "JX+NNG",
+          "z": 3.3,
+          "count_ai": 421,
+          "count_h": 362,
+          "docs_ai": 27,
+          "docs_h": 27
+        },
+        {
+          "item": "SP+NNP",
+          "z": 3.19,
+          "count_ai": 82,
+          "count_h": 50,
+          "docs_ai": 18,
+          "docs_h": 14
+        },
+        {
+          "item": "NNG+JKS",
+          "z": 3.09,
+          "count_ai": 487,
+          "count_h": 433,
+          "docs_ai": 27,
+          "docs_h": 27
+        }
+      ],
+      "human_over": [
+        {
+          "item": "SL+SL",
+          "z": -10.2,
+          "count_ai": 91,
+          "count_h": 334,
+          "docs_ai": 17,
+          "docs_h": 19
+        },
+        {
+          "item": "SSO+SL",
+          "z": -8.69,
+          "count_ai": 79,
+          "count_h": 265,
+          "docs_ai": 13,
+          "docs_h": 18
+        },
+        {
+          "item": "SL+SSC",
+          "z": -8.59,
+          "count_ai": 82,
+          "count_h": 267,
+          "docs_ai": 15,
+          "docs_h": 18
+        },
+        {
+          "item": "NNG+SSO",
+          "z": -6.76,
+          "count_ai": 63,
+          "count_h": 186,
+          "docs_ai": 18,
+          "docs_h": 22
+        },
+        {
+          "item": "SN+NNB",
+          "z": -6.35,
+          "count_ai": 97,
+          "count_h": 230,
+          "docs_ai": 19,
+          "docs_h": 20
+        },
+        {
+          "item": "NNB+SN",
+          "z": -5.01,
+          "count_ai": 4,
+          "count_h": 55,
+          "docs_ai": 3,
+          "docs_h": 10
+        },
+        {
+          "item": "NNP+SSO",
+          "z": -4.82,
+          "count_ai": 37,
+          "count_h": 103,
+          "docs_ai": 10,
+          "docs_h": 11
+        },
+        {
+          "item": "JKO+NNG",
+          "z": -4.36,
+          "count_ai": 415,
+          "count_h": 598,
+          "docs_ai": 27,
+          "docs_h": 27
+        },
+        {
+          "item": "ETN+VV",
+          "z": -4.01,
+          "count_ai": 10,
+          "count_h": 45,
+          "docs_ai": 5,
+          "docs_h": 16
+        },
+        {
+          "item": "SSC+JKO",
+          "z": -3.91,
+          "count_ai": 22,
+          "count_h": 64,
+          "docs_ai": 11,
+          "docs_h": 17
+        },
+        {
+          "item": "SN+NNG",
+          "z": -3.58,
+          "count_ai": 11,
+          "count_h": 41,
+          "docs_ai": 6,
+          "docs_h": 15
+        },
+        {
+          "item": "NNB+VCP",
+          "z": -3.56,
+          "count_ai": 40,
+          "count_h": 87,
+          "docs_ai": 14,
+          "docs_h": 24
+        },
+        {
+          "item": "SL+NNG",
+          "z": -3.55,
+          "count_ai": 77,
+          "count_h": 140,
+          "docs_ai": 19,
+          "docs_h": 19
+        },
+        {
+          "item": "SH+SSC",
+          "z": -3.41,
+          "count_ai": 20,
+          "count_h": 54,
+          "docs_ai": 5,
+          "docs_h": 8
+        },
+        {
+          "item": "SSO+SH",
+          "z": -3.4,
+          "count_ai": 22,
+          "count_h": 57,
+          "docs_ai": 5,
+          "docs_h": 9
+        }
+      ],
+      "human_zero": [
+        {
+          "item": "XSN+VV",
+          "docs_ai": 6
+        },
+        {
+          "item": "SP+NR",
+          "docs_ai": 4
+        },
+        {
+          "item": "JC+VV",
+          "docs_ai": 3
+        },
+        {
+          "item": "JKS+SP",
+          "docs_ai": 3
+        },
+        {
+          "item": "NNB+XPN",
+          "docs_ai": 3
+        },
+        {
+          "item": "NNP+VA",
+          "docs_ai": 3
+        },
+        {
+          "item": "NP+XSN",
+          "docs_ai": 3
+        },
+        {
+          "item": "SL+VA",
+          "docs_ai": 3
+        },
+        {
+          "item": "JC+XR",
+          "docs_ai": 2
+        },
+        {
+          "item": "JKO+NP",
+          "docs_ai": 2
+        },
+        {
+          "item": "MM+VA",
+          "docs_ai": 2
+        },
+        {
+          "item": "NR+JKS",
+          "docs_ai": 2
+        },
+        {
+          "item": "NR+SP",
+          "docs_ai": 2
+        },
+        {
+          "item": "SF+SW",
+          "docs_ai": 2
+        },
+        {
+          "item": "XPN+XR",
+          "docs_ai": 2
+        }
+      ]
+    },
+    "function_words": {
+      "no": 13,
+      "ai_over": [
+        {
+          "item": "면/EC",
+          "z": 3.68,
+          "count_ai": 117,
+          "count_h": 70,
+          "docs_ai": 19,
+          "docs_h": 20
+        },
+        {
+          "item": "적/XSN",
+          "z": 3.64,
+          "count_ai": 176,
+          "count_h": 120,
+          "docs_ai": 24,
+          "docs_h": 25
+        },
+        {
+          "item": "과/JC",
+          "z": 3.59,
+          "count_ai": 107,
+          "count_h": 63,
+          "docs_ai": 24,
+          "docs_h": 19
+        },
+        {
+          "item": "ᆸ니다/EF",
+          "z": 3.44,
+          "count_ai": 298,
+          "count_h": 233,
+          "docs_ai": 15,
+          "docs_h": 17
+        },
+        {
+          "item": "씩/XSN",
+          "z": 3.16,
+          "count_ai": 19,
+          "count_h": 2,
+          "docs_ai": 13,
+          "docs_h": 2
+        },
+        {
+          "item": "습니다/EF",
+          "z": 3.03,
+          "count_ai": 246,
+          "count_h": 194,
+          "docs_ai": 14,
+          "docs_h": 15
+        },
+        {
+          "item": "이나/JC",
+          "z": 2.98,
+          "count_ai": 35,
+          "count_h": 14,
+          "docs_ai": 15,
+          "docs_h": 8
+        },
+        {
+          "item": "라면/EC",
+          "z": 2.65,
+          "count_ai": 17,
+          "count_h": 4,
+          "docs_ai": 8,
+          "docs_h": 4
+        },
+        {
+          "item": "만/JX",
+          "z": 2.57,
+          "count_ai": 68,
+          "count_h": 43,
+          "docs_ai": 18,
+          "docs_h": 19
+        },
+        {
+          "item": "이/JKS",
+          "z": 2.44,
+          "count_ai": 365,
+          "count_h": 321,
+          "docs_ai": 26,
+          "docs_h": 27
+        },
+        {
+          "item": "은/JX",
+          "z": 2.38,
+          "count_ai": 265,
+          "count_h": 226,
+          "docs_ai": 27,
+          "docs_h": 27
+        },
+        {
+          "item": "도/JX",
+          "z": 2.35,
+          "count_ai": 153,
+          "count_h": 121,
+          "docs_ai": 27,
+          "docs_h": 27
+        },
+        {
+          "item": "ᆯ/JKO",
+          "z": 2.31,
+          "count_ai": 16,
+          "count_h": 5,
+          "docs_ai": 7,
+          "docs_h": 5
+        },
+        {
+          "item": "와/JC",
+          "z": 2.25,
+          "count_ai": 77,
+          "count_h": 54,
+          "docs_ai": 24,
+          "docs_h": 22
+        },
+        {
+          "item": "나/JC",
+          "z": 2.24,
+          "count_ai": 17,
+          "count_h": 6,
+          "docs_ai": 10,
+          "docs_h": 4
+        }
+      ],
+      "human_over": [
+        {
+          "item": "어서/EC",
+          "z": -3.81,
+          "count_ai": 51,
+          "count_h": 106,
+          "docs_ai": 16,
+          "docs_h": 23
+        },
+        {
+          "item": "의/JKG",
+          "z": -3.55,
+          "count_ai": 394,
+          "count_h": 530,
+          "docs_ai": 27,
+          "docs_h": 26
+        },
+        {
+          "item": "기/ETN",
+          "z": -3.36,
+          "count_ai": 88,
+          "count_h": 149,
+          "docs_ai": 24,
+          "docs_h": 26
+        },
+        {
+          "item": "들/XSN",
+          "z": -3.34,
+          "count_ai": 86,
+          "count_h": 146,
+          "docs_ai": 21,
+          "docs_h": 25
+        },
+        {
+          "item": "시키/XSV",
+          "z": -3.33,
+          "count_ai": 7,
+          "count_h": 31,
+          "docs_ai": 4,
+          "docs_h": 15
+        },
+        {
+          "item": "하/XSV",
+          "z": -3.32,
+          "count_ai": 779,
+          "count_h": 965,
+          "docs_ai": 27,
+          "docs_h": 27
+        },
+        {
+          "item": "시/EP",
+          "z": -2.62,
+          "count_ai": 12,
+          "count_h": 32,
+          "docs_ai": 4,
+          "docs_h": 9
+        },
+        {
+          "item": "이/JKC",
+          "z": -2.28,
+          "count_ai": 21,
+          "count_h": 42,
+          "docs_ai": 15,
+          "docs_h": 19
+        },
+        {
+          "item": "음/ETN",
+          "z": -2.23,
+          "count_ai": 2,
+          "count_h": 12,
+          "docs_ai": 2,
+          "docs_h": 7
+        },
+        {
+          "item": "요/JX",
+          "z": -2.14,
+          "count_ai": 3,
+          "count_h": 13,
+          "docs_ai": 2,
+          "docs_h": 7
+        },
+        {
+          "item": "ᆫ다면/EC",
+          "z": -2.04,
+          "count_ai": 1,
+          "count_h": 9,
+          "docs_ai": 1,
+          "docs_h": 6
+        },
+        {
+          "item": "으로서/JKB",
+          "z": -2.04,
+          "count_ai": 1,
+          "count_h": 9,
+          "docs_ai": 1,
+          "docs_h": 3
+        },
+        {
+          "item": "고자/EC",
+          "z": -2.04,
+          "count_ai": 0,
+          "count_h": 10,
+          "docs_ai": 0,
+          "docs_h": 8
+        },
+        {
+          "item": "라고/EC",
+          "z": -1.96,
+          "count_ai": 12,
+          "count_h": 26,
+          "docs_ai": 8,
+          "docs_h": 13
+        },
+        {
+          "item": "기에/EC",
+          "z": -1.93,
+          "count_ai": 0,
+          "count_h": 9,
+          "docs_ai": 0,
+          "docs_h": 6
+        }
+      ],
+      "human_zero": [
+        {
+          "item": "쯤/XSN",
+          "docs_ai": 4
+        },
+        {
+          "item": "만큼/JKB",
+          "docs_ai": 3
+        },
+        {
+          "item": "으려면/EC",
+          "docs_ai": 2
+        },
+        {
+          "item": "을지/EC",
+          "docs_ai": 2
+        },
+        {
+          "item": "치/XSN",
+          "docs_ai": 2
+        },
+        {
+          "item": "ᆫ가라는/ETM",
+          "docs_ai": 1
+        },
+        {
+          "item": "ᆫ가요/EF",
+          "docs_ai": 1
+        },
+        {
+          "item": "ᆯ로/JKB",
+          "docs_ai": 1
+        },
+        {
+          "item": "거든요/EF",
+          "docs_ai": 1
+        },
+        {
+          "item": "고/JKQ",
+          "docs_ai": 1
+        },
+        {
+          "item": "께/JKB",
+          "docs_ai": 1
+        },
+        {
+          "item": "끼리/XSN",
+          "docs_ai": 1
+        },
+        {
+          "item": "나요/EF",
+          "docs_ai": 1
+        },
+        {
+          "item": "느냐/EC",
+          "docs_ai": 1
+        },
+        {
+          "item": "되/EC",
+          "docs_ai": 1
+        }
+      ]
+    },
+    "josa_bigrams": {
+      "no": 14,
+      "ai_over": [
+        {
+          "item": "이나/JC+을/JKO",
+          "z": 2.34,
+          "count_ai": 14,
+          "count_h": 3,
+          "docs_ai": 6,
+          "docs_h": 3
+        },
+        {
+          "item": "은/JX+와/JC",
+          "z": 2.01,
+          "count_ai": 10,
+          "count_h": 2,
+          "docs_ai": 7,
+          "docs_h": 1
+        },
+        {
+          "item": "으로/JKB+이/JKS",
+          "z": 1.97,
+          "count_ai": 13,
+          "count_h": 4,
+          "docs_ai": 9,
+          "docs_h": 4
+        },
+        {
+          "item": "과/JC+을/JKO",
+          "z": 1.87,
+          "count_ai": 25,
+          "count_h": 13,
+          "docs_ai": 12,
+          "docs_h": 11
+        },
+        {
+          "item": "의/JKG+처럼/JKB",
+          "z": 1.85,
+          "count_ai": 6,
+          "count_h": 0,
+          "docs_ai": 5,
+          "docs_h": 0
+        },
+        {
+          "item": "가/JKS+가/JKS",
+          "z": 1.82,
+          "count_ai": 22,
+          "count_h": 11,
+          "docs_ai": 9,
+          "docs_h": 8
+        },
+        {
+          "item": "을/JKO+도/JX",
+          "z": 1.74,
+          "count_ai": 20,
+          "count_h": 10,
+          "docs_ai": 10,
+          "docs_h": 9
+        },
+        {
+          "item": "처럼/JKB+의/JKG",
+          "z": 1.69,
+          "count_ai": 5,
+          "count_h": 0,
+          "docs_ai": 4,
+          "docs_h": 0
+        },
+        {
+          "item": "이/JKS+ᆯ/JKO",
+          "z": 1.69,
+          "count_ai": 5,
+          "count_h": 0,
+          "docs_ai": 4,
+          "docs_h": 0
+        },
+        {
+          "item": "까지/JX+에/JKB",
+          "z": 1.69,
+          "count_ai": 5,
+          "count_h": 0,
+          "docs_ai": 5,
+          "docs_h": 0
+        },
+        {
+          "item": "로/JKB+은/JX",
+          "z": 1.68,
+          "count_ai": 8,
+          "count_h": 2,
+          "docs_ai": 7,
+          "docs_h": 2
+        },
+        {
+          "item": "가/JKS+까지/JX",
+          "z": 1.68,
+          "count_ai": 8,
+          "count_h": 2,
+          "docs_ai": 4,
+          "docs_h": 1
+        },
+        {
+          "item": "와/JC+을/JKO",
+          "z": 1.65,
+          "count_ai": 18,
+          "count_h": 9,
+          "docs_ai": 15,
+          "docs_h": 5
+        },
+        {
+          "item": "의/JKG+만/JX",
+          "z": 1.62,
+          "count_ai": 6,
+          "count_h": 1,
+          "docs_ai": 4,
+          "docs_h": 1
+        },
+        {
+          "item": "과/JC+로/JKB",
+          "z": 1.62,
+          "count_ai": 6,
+          "count_h": 1,
+          "docs_ai": 5,
+          "docs_h": 1
+        }
+      ],
+      "human_over": [
+        {
+          "item": "가/JKS+의/JKG",
+          "z": -2.62,
+          "count_ai": 8,
+          "count_h": 27,
+          "docs_ai": 6,
+          "docs_h": 15
+        },
+        {
+          "item": "의/JKG+의/JKG",
+          "z": -2.58,
+          "count_ai": 15,
+          "count_h": 38,
+          "docs_ai": 5,
+          "docs_h": 15
+        },
+        {
+          "item": "의/JKG+에/JKB",
+          "z": -2.54,
+          "count_ai": 33,
+          "count_h": 64,
+          "docs_ai": 15,
+          "docs_h": 16
+        },
+        {
+          "item": "에/JKB+를/JKO",
+          "z": -2.27,
+          "count_ai": 32,
+          "count_h": 59,
+          "docs_ai": 16,
+          "docs_h": 19
+        },
+        {
+          "item": "에/JKB+에/JKB",
+          "z": -2.0,
+          "count_ai": 13,
+          "count_h": 29,
+          "docs_ai": 7,
+          "docs_h": 13
+        },
+        {
+          "item": "를/JKO+의/JKG",
+          "z": -1.91,
+          "count_ai": 17,
+          "count_h": 34,
+          "docs_ai": 11,
+          "docs_h": 15
+        },
+        {
+          "item": "과/JKB+를/JKO",
+          "z": -1.88,
+          "count_ai": 3,
+          "count_h": 12,
+          "docs_ai": 3,
+          "docs_h": 5
+        },
+        {
+          "item": "를/JKO+를/JKO",
+          "z": -1.84,
+          "count_ai": 30,
+          "count_h": 51,
+          "docs_ai": 18,
+          "docs_h": 13
+        },
+        {
+          "item": "의/JKG+에서/JKB",
+          "z": -1.83,
+          "count_ai": 12,
+          "count_h": 26,
+          "docs_ai": 8,
+          "docs_h": 14
+        },
+        {
+          "item": "가/JKS+에/JKB",
+          "z": -1.83,
+          "count_ai": 19,
+          "count_h": 36,
+          "docs_ai": 13,
+          "docs_h": 16
+        },
+        {
+          "item": "에서/JKB+의/JKG",
+          "z": -1.79,
+          "count_ai": 7,
+          "count_h": 18,
+          "docs_ai": 6,
+          "docs_h": 12
+        },
+        {
+          "item": "를/JKO+을/JKO",
+          "z": -1.78,
+          "count_ai": 29,
+          "count_h": 49,
+          "docs_ai": 13,
+          "docs_h": 20
+        },
+        {
+          "item": "을/JKO+에/JKB",
+          "z": -1.68,
+          "count_ai": 33,
+          "count_h": 53,
+          "docs_ai": 19,
+          "docs_h": 18
+        },
+        {
+          "item": "으로/JKB+가/JKS",
+          "z": -1.68,
+          "count_ai": 5,
+          "count_h": 14,
+          "docs_ai": 5,
+          "docs_h": 9
+        },
+        {
+          "item": "의/JKG+를/JKO",
+          "z": -1.67,
+          "count_ai": 37,
+          "count_h": 58,
+          "docs_ai": 16,
+          "docs_h": 21
+        }
+      ],
+      "human_zero": [
+        {
+          "item": "까지/JX+에/JKB",
+          "docs_ai": 5
+        },
+        {
+          "item": "의/JKG+처럼/JKB",
+          "docs_ai": 5
+        },
+        {
+          "item": "과/JC+만/JX",
+          "docs_ai": 4
+        },
+        {
+          "item": "보다/JKB+가/JKS",
+          "docs_ai": 4
+        },
+        {
+          "item": "이/JKS+ᆯ/JKO",
+          "docs_ai": 4
+        },
+        {
+          "item": "처럼/JKB+의/JKG",
+          "docs_ai": 4
+        },
+        {
+          "item": "과/JC+도/JX",
+          "docs_ai": 3
+        },
+        {
+          "item": "마다/JX+를/JKO",
+          "docs_ai": 3
+        },
+        {
+          "item": "만/JX+를/JKO",
+          "docs_ai": 3
+        },
+        {
+          "item": "에/JKB+로서/JKB",
+          "docs_ai": 3
+        },
+        {
+          "item": "에서/JKB+와/JC",
+          "docs_ai": 3
+        },
+        {
+          "item": "은/JX+만/JX",
+          "docs_ai": 3
+        },
+        {
+          "item": "은/JX+보다/JKB",
+          "docs_ai": 3
+        },
+        {
+          "item": "의/JKG+이나/JC",
+          "docs_ai": 3
+        },
+        {
+          "item": "이/JKS+이나/JC",
+          "docs_ai": 3
+        }
+      ]
+    },
+    "eojeol_patterns": {
+      "no": 15,
+      "ai_over": [
+        {
+          "item": "NNG+JC",
+          "z": 5.23,
+          "count_ai": 165,
+          "count_h": 84,
+          "docs_ai": 26,
+          "docs_h": 21
+        },
+        {
+          "item": "NNG",
+          "z": 4.63,
+          "count_ai": 1388,
+          "count_h": 1226,
+          "docs_ai": 27,
+          "docs_h": 27
+        },
+        {
+          "item": "NNG+SP",
+          "z": 4.36,
+          "count_ai": 138,
+          "count_h": 76,
+          "docs_ai": 23,
+          "docs_h": 18
+        },
+        {
+          "item": "NNG+JX",
+          "z": 3.98,
+          "count_ai": 404,
+          "count_h": 312,
+          "docs_ai": 27,
+          "docs_h": 27
+        },
+        {
+          "item": "NNG+JKS",
+          "z": 3.47,
+          "count_ai": 451,
+          "count_h": 369,
+          "docs_ai": 27,
+          "docs_h": 27
+        },
+        {
+          "item": "VX+EC+SP",
+          "z": 3.47,
+          "count_ai": 39,
+          "count_h": 13,
+          "docs_ai": 16,
+          "docs_h": 9
+        },
+        {
+          "item": "VV+EF+SF",
+          "z": 3.44,
+          "count_ai": 171,
+          "count_h": 117,
+          "docs_ai": 26,
+          "docs_h": 26
+        },
+        {
+          "item": "MAG",
+          "z": 3.31,
+          "count_ai": 570,
+          "count_h": 486,
+          "docs_ai": 27,
+          "docs_h": 27
+        },
+        {
+          "item": "VA+EF+SF",
+          "z": 3.13,
+          "count_ai": 111,
+          "count_h": 71,
+          "docs_ai": 19,
+          "docs_h": 21
+        },
+        {
+          "item": "VV+EC+SP",
+          "z": 2.85,
+          "count_ai": 65,
+          "count_h": 37,
+          "docs_ai": 18,
+          "docs_h": 15
+        },
+        {
+          "item": "NNG+JKB",
+          "z": 2.77,
+          "count_ai": 691,
+          "count_h": 621,
+          "docs_ai": 27,
+          "docs_h": 27
+        },
+        {
+          "item": "NNG+VCP+EC+SP",
+          "z": 2.55,
+          "count_ai": 18,
+          "count_h": 5,
+          "docs_ai": 12,
+          "docs_h": 4
+        },
+        {
+          "item": "VA+ETM",
+          "z": 2.48,
+          "count_ai": 208,
+          "count_h": 167,
+          "docs_ai": 25,
+          "docs_h": 26
+        },
+        {
+          "item": "VV+ETM",
+          "z": 2.47,
+          "count_ai": 361,
+          "count_h": 311,
+          "docs_ai": 27,
+          "docs_h": 27
+        },
+        {
+          "item": "NNG+XSN+VCP+ETM",
+          "z": 2.39,
+          "count_ai": 57,
+          "count_h": 35,
+          "docs_ai": 19,
+          "docs_h": 14
+        }
+      ],
+      "human_over": [
+        {
+          "item": "SL",
+          "z": -9.96,
+          "count_ai": 159,
+          "count_h": 424,
+          "docs_ai": 21,
+          "docs_h": 21
+        },
+        {
+          "item": "SN+NNB",
+          "z": -5.66,
+          "count_ai": 44,
+          "count_h": 127,
+          "docs_ai": 16,
+          "docs_h": 15
+        },
+        {
+          "item": "NNP+JKB",
+          "z": -3.57,
+          "count_ai": 30,
+          "count_h": 70,
+          "docs_ai": 13,
+          "docs_h": 21
+        },
+        {
+          "item": "NNG+SSO+SL+SSC+JKO",
+          "z": -3.43,
+          "count_ai": 0,
+          "count_h": 29,
+          "docs_ai": 0,
+          "docs_h": 5
+        },
+        {
+          "item": "SL+JKO",
+          "z": -3.39,
+          "count_ai": 33,
+          "count_h": 72,
+          "docs_ai": 9,
+          "docs_h": 16
+        },
+        {
+          "item": "NNP+SSO+SL+SSC",
+          "z": -3.37,
+          "count_ai": 4,
+          "count_h": 26,
+          "docs_ai": 2,
+          "docs_h": 4
+        },
+        {
+          "item": "SL+JKG",
+          "z": -3.17,
+          "count_ai": 6,
+          "count_h": 27,
+          "docs_ai": 5,
+          "docs_h": 11
+        },
+        {
+          "item": "SP",
+          "z": -2.96,
+          "count_ai": 1,
+          "count_h": 18,
+          "docs_ai": 1,
+          "docs_h": 6
+        },
+        {
+          "item": "VV+EC+JX",
+          "z": -2.93,
+          "count_ai": 8,
+          "count_h": 28,
+          "docs_ai": 5,
+          "docs_h": 14
+        },
+        {
+          "item": "NNG+NNG+JKB",
+          "z": -2.91,
+          "count_ai": 27,
+          "count_h": 57,
+          "docs_ai": 12,
+          "docs_h": 18
+        },
+        {
+          "item": "SN",
+          "z": -2.87,
+          "count_ai": 3,
+          "count_h": 19,
+          "docs_ai": 2,
+          "docs_h": 8
+        },
+        {
+          "item": "NNB+VCP+EF+SF",
+          "z": -2.8,
+          "count_ai": 19,
+          "count_h": 44,
+          "docs_ai": 11,
+          "docs_h": 18
+        },
+        {
+          "item": "MAG+SP",
+          "z": -2.77,
+          "count_ai": 3,
+          "count_h": 18,
+          "docs_ai": 3,
+          "docs_h": 10
+        },
+        {
+          "item": "NNG+SSO+SL+SSC",
+          "z": -2.62,
+          "count_ai": 5,
+          "count_h": 20,
+          "docs_ai": 3,
+          "docs_h": 3
+        },
+        {
+          "item": "SN+NNB+JKB",
+          "z": -2.62,
+          "count_ai": 5,
+          "count_h": 20,
+          "docs_ai": 5,
+          "docs_h": 9
+        }
+      ],
+      "human_zero": [
+        {
+          "item": "NNP+NNG+JX",
+          "docs_ai": 4
+        },
+        {
+          "item": "SSO+NNG+JKS",
+          "docs_ai": 4
+        },
+        {
+          "item": "NNG+JKS+SP",
+          "docs_ai": 3
+        },
+        {
+          "item": "NNG+XSA+EC+VX+EF+SF",
+          "docs_ai": 3
+        },
+        {
+          "item": "SL+XSV+ETM",
+          "docs_ai": 3
+        },
+        {
+          "item": "SN+NNB+JKB+JX",
+          "docs_ai": 3
+        },
+        {
+          "item": "SSO+NNG+SSC+JKS",
+          "docs_ai": 3
+        },
+        {
+          "item": "SSO+NP+JKO",
+          "docs_ai": 3
+        },
+        {
+          "item": "VV+EF",
+          "docs_ai": 3
+        },
+        {
+          "item": "VV+ETN+JKO",
+          "docs_ai": 3
+        },
+        {
+          "item": "MM+NR",
+          "docs_ai": 2
+        },
+        {
+          "item": "NNB+JX+JKB+JX",
+          "docs_ai": 2
+        },
+        {
+          "item": "NNB+VCP+EF+SSC+VCP+ETM",
+          "docs_ai": 2
+        },
+        {
+          "item": "NNB+XSN+JKO",
+          "docs_ai": 2
+        },
+        {
+          "item": "NNG+JX+SF",
+          "docs_ai": 2
+        }
+      ]
+    }
+  }
+}

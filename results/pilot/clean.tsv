@@ -1,0 +1,60 @@
+id	group	genre	hangul_before	hangul_after	removed
+wiki-01	human	wiki	868	868	
+wiki-02	human	wiki	2901	2901	
+wiki-03	human	wiki	1197	1197	
+wiki-04	human	wiki	4872	4872	
+wiki-05	human	wiki	838	838	
+wiki-06	human	wiki	1229	1229	
+wiki-07	human	wiki	1133	1133	
+wiki-08	human	wiki	6104	6104	
+wiki-09	human	wiki	1182	1182	
+wiki-10	human	wiki	3844	3844	
+personal-01	human	personal	2372	2372	
+personal-02	human	personal	4656	4656	
+personal-03	human	personal	812	799	제목 줄
+personal-04	human	personal	2067	2067	
+personal-05	human	personal	1542	1542	
+personal-06	human	personal	2039	2039	
+tech-01	human	tech	1925	1925	
+tech-02	human	tech	1993	1993	
+tech-03	human	tech	3539	3527	제목 줄
+tech-04	human	tech	1162	1157	제목 줄
+tech-05	human	tech	3193	3175	제목 줄
+tech-06	human	tech	2896	2896	
+tech-07	human	tech	1071	1071	
+tech-08	human	tech	1217	1217	
+tech-09	human	tech	6528	6528	
+tech-10	human	tech	2304	2288	제목 줄
+personal-07	human	personal	852	852	
+personal-08	human	personal	1089	1089	
+personal-09	human	personal	3174	3174	
+personal-10	human	personal	3273	3273	
+ai-wiki-01	ai	wiki	591	591	
+ai-wiki-02	ai	wiki	1300	1300	
+ai-wiki-03	ai	wiki	843	843	
+ai-wiki-04	ai	wiki	1550	1423	메타 문단;미디어위키 제목 줄;미디어위키 제목 줄;미디어위키 제목 줄;미디어위키 제목 줄;미디어위키 제목 줄
+ai-personal-01	ai	personal	1341	1341	
+ai-wiki-06	ai	wiki	583	583	
+ai-personal-02	ai	personal	1943	1943	
+ai-personal-03	ai	personal	669	669	
+ai-wiki-07	ai	wiki	720	720	
+ai-personal-04	ai	personal	964	952	제목 줄
+ai-wiki-08	ai	wiki	3071	3071	
+ai-personal-05	ai	personal	816	816	
+ai-personal-06	ai	personal	1097	1097	
+ai-wiki-09	ai	wiki	851	851	
+ai-personal-07	ai	personal	486	486	
+ai-wiki-10	ai	wiki	1480	1480	
+ai-personal-08	ai	personal	848	841	제목 줄
+ai-personal-09	ai	personal	1425	1425	
+ai-personal-10	ai	personal	1369	1360	제목 줄
+ai-tech-01	ai	tech	1194	1194	
+ai-tech-02	ai	tech	1161	1155	제목 줄
+ai-tech-03	ai	tech	2380	2368	제목 줄
+ai-tech-04	ai	tech	696	674	메타 문단;제목 줄
+ai-tech-05	ai	tech	2175	2175	
+ai-tech-06	ai	tech	1493	1469	제목 줄
+ai-tech-07	ai	tech	705	705	
+ai-tech-08	ai	tech	775	761	제목 줄
+ai-tech-09	ai	tech	4359	4359	
+ai-tech-10	ai	tech	1301	1285	제목 줄

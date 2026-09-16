@@ -1,0 +1,625 @@
+{
+  "train": "out/pilot-matched",
+  "test": "out/pilot2-matched",
+  "n_train": 54,
+  "n_test_human": 30,
+  "n_test_ai": 30,
+  "representatives": {
+    "쉼표": {
+      "key": "comma_inclusion",
+      "mean_h": 0.291849037037037,
+      "sd_h": 0.15222515753937493,
+      "mean_ai": 0.39480496296296297,
+      "sd_ai": 0.21178264052814316,
+      "d": 0.5582568146493883
+    },
+    "문장부호와 기호": {
+      "key": "num_symbol_per_1k",
+      "mean_h": 11.210821925925925,
+      "sd_h": 10.959789700706326,
+      "mean_ai": 5.223038333333333,
+      "sd_ai": 4.481618612332173,
+      "d": -0.7151615399229724
+    },
+    "띄어쓰기": {
+      "key": "spacing_adherence",
+      "mean_h": 0.802359962962963,
+      "sd_h": 0.1506605886562836,
+      "mean_ai": 0.9294221111111112,
+      "sd_ai": 0.06848062021360135,
+      "d": 1.085798856475386
+    },
+    "어휘와 품사 다양도": {
+      "key": "mattr",
+      "mean_h": 0.6931558518518519,
+      "sd_h": 0.03433926955229914,
+      "mean_ai": 0.7299027407407408,
+      "sd_ai": 0.020860745928910653,
+      "d": 1.2934090554527877
+    },
+    "어휘 밀도": {
+      "key": "lexical_density",
+      "mean_h": 0.396314962962963,
+      "sd_h": 0.0346442272274013,
+      "mean_ai": 0.4296018888888889,
+      "sd_ai": 0.03263951713551391,
+      "d": 0.9890103799388152
+    },
+    "수식": {
+      "key": "adj_ratio",
+      "mean_h": 0.018041925925925927,
+      "sd_h": 0.00826162266783131,
+      "mean_ai": 0.022099851851851853,
+      "sd_ai": 0.012012011293342404,
+      "d": 0.39363697814202137
+    },
+    "명사화": {
+      "key": "nominalization_per_1k",
+      "mean_h": 8.215931407407409,
+      "sd_h": 4.3187599466866535,
+      "mean_ai": 7.23833737037037,
+      "sd_ai": 5.375366297869239,
+      "d": -0.20050047484043948
+    },
+    "보조 용언": {
+      "key": "aux_per_1k",
+      "mean_h": 22.741634296296297,
+      "sd_h": 9.89045306696608,
+      "mean_ai": 21.201978555555556,
+      "sd_ai": 8.543177998476217,
+      "d": -0.1666041640363032
+    },
+    "대명사와 지시어": {
+      "key": "pronoun_per_1k",
+      "mean_h": 5.010974925925926,
+      "sd_h": 3.6911463795160993,
+      "mean_ai": 6.096215888888889,
+      "sd_ai": 7.64669804056655,
+      "d": 0.1807523393363053
+    },
+    "조사": {
+      "key": "jkg_per_1k",
+      "mean_h": 20.118428925925926,
+      "sd_h": 12.136492175573876,
+      "mean_ai": 16.514616222222223,
+      "sd_ai": 9.491400872860703,
+      "d": -0.3307913242308168
+    },
+    "의존명사": {
+      "key": "geot_ttaemun_per_1k",
+      "mean_h": 7.120328925925926,
+      "sd_h": 5.161570529943367,
+      "mean_ai": 6.656668925925926,
+      "sd_ai": 5.858867263840366,
+      "d": -0.08397754420151576
+    },
+    "문장 길이": {
+      "key": "sent_len_cv",
+      "mean_h": 0.584586962962963,
+      "sd_h": 0.12891226398701516,
+      "mean_ai": 0.45676211111111115,
+      "sd_ai": 0.12119012151385611,
+      "d": -1.021693303375368
+    },
+    "절과 의존 구조": {
+      "key": "dep_distance",
+      "mean_h": 2.745490777777778,
+      "sd_h": 0.32825070414979995,
+      "mean_ai": 2.6361188888888893,
+      "sd_ai": 0.3943336569271081,
+      "d": -0.30146613639040565
+    },
+    "접속": {
+      "key": "coord_per_1k",
+      "mean_h": 6.322277888888889,
+      "sd_h": 4.5097435966918,
+      "mean_ai": 10.904400074074074,
+      "sd_ai": 6.9828988526085745,
+      "d": 0.7795551397701739
+    },
+    "사동·부정·피동": {
+      "key": "short_neg_share",
+      "mean_h": 0.23771936842105265,
+      "sd_h": 0.29348891230096086,
+      "mean_ai": 0.12428570000000001,
+      "sd_ai": 0.2451104407286846,
+      "d": -0.41952824394534477
+    },
+    "양태와 인식": {
+      "key": "epistemic_per_1k",
+      "mean_h": 0.46796944444444444,
+      "sd_h": 0.8803662993360726,
+      "mean_ai": 0.29139255555555554,
+      "sd_ai": 0.725007306813516,
+      "d": -0.21895938164685094
+    },
+    "담화·완화·정도": {
+      "key": "degree_adv_per_1k",
+      "mean_h": 1.804048185185185,
+      "sd_h": 1.9571717862069358,
+      "mean_ai": 2.1801424444444444,
+      "sd_ai": 2.0778646168851,
+      "d": 0.1863309732006519
+    },
+    "번역투 동사": {
+      "key": "translationese_verbs_per_1k",
+      "mean_h": 5.004009851851851,
+      "sd_h": 3.611306206584729,
+      "mean_ai": 2.4657501481481483,
+      "sd_ai": 2.3017848715119236,
+      "d": -0.8382130024903897
+    },
+    "높임": {
+      "key": "honorific_ep_per_1k",
+      "mean_h": 1.574678037037037,
+      "sd_h": 3.540066372039858,
+      "mean_ai": 0.7238668148148149,
+      "sd_ai": 2.435366997297244,
+      "d": -0.28002454762724066
+    },
+    "인용": {
+      "key": "quote_per_1k",
+      "mean_h": 0.060885592592592595,
+      "sd_h": 0.21789752914823998,
+      "mean_ai": 0.4355769259259259,
+      "sd_ai": 1.010983867084891,
+      "d": 0.512370956022778
+    }
+  },
+  "threshold_train_human_max": 0.6308067367398293,
+  "test_human_over_threshold": [
+    "personal-02",
+    "personal-04",
+    "wiki-04",
+    "personal-07",
+    "wiki-08",
+    "tech-01"
+  ],
+  "test_ai_over_threshold": [
+    "ai-personal-03",
+    "ai-personal-05",
+    "ai-personal-07",
+    "ai-personal-08",
+    "ai-tech-06",
+    "ai-tech-01",
+    "ai-tech-02",
+    "ai-personal-09",
+    "ai-wiki-02",
+    "ai-tech-05",
+    "ai-wiki-03",
+    "ai-wiki-04",
+    "ai-tech-07",
+    "ai-wiki-05",
+    "ai-tech-09",
+    "ai-wiki-06",
+    "ai-wiki-07",
+    "ai-wiki-08",
+    "ai-wiki-09",
+    "ai-wiki-10",
+    "ai-tech-10"
+  ],
+  "test_auroc": 0.83,
+  "share_shuffled_auroc_ge_observed": 0.0,
+  "scores": [
+    {
+      "id": "ai-wiki-06",
+      "group": "ai",
+      "genre": "wiki",
+      "model": "claude-sonnet-5",
+      "score": 13.607170823709824
+    },
+    {
+      "id": "ai-personal-09",
+      "group": "ai",
+      "genre": "personal",
+      "model": "claude-opus-5",
+      "score": 7.701030637042248
+    },
+    {
+      "id": "ai-wiki-05",
+      "group": "ai",
+      "genre": "wiki",
+      "model": "claude-opus-5",
+      "score": 7.29950727775455
+    },
+    {
+      "id": "ai-personal-05",
+      "group": "ai",
+      "genre": "personal",
+      "model": "claude-opus-5",
+      "score": 7.1945974426750166
+    },
+    {
+      "id": "personal-02",
+      "group": "human",
+      "genre": "personal",
+      "model": "",
+      "score": 6.900151033056455
+    },
+    {
+      "id": "ai-wiki-04",
+      "group": "ai",
+      "genre": "wiki",
+      "model": "claude-sonnet-5",
+      "score": 6.7901641501563486
+    },
+    {
+      "id": "ai-tech-01",
+      "group": "ai",
+      "genre": "tech",
+      "model": "claude-opus-5",
+      "score": 6.322149147683175
+    },
+    {
+      "id": "ai-wiki-09",
+      "group": "ai",
+      "genre": "wiki",
+      "model": "claude-opus-5",
+      "score": 5.8837615178210125
+    },
+    {
+      "id": "ai-wiki-08",
+      "group": "ai",
+      "genre": "wiki",
+      "model": "claude-sonnet-5",
+      "score": 5.432877447455853
+    },
+    {
+      "id": "ai-tech-06",
+      "group": "ai",
+      "genre": "tech",
+      "model": "claude-sonnet-5",
+      "score": 5.066730737967603
+    },
+    {
+      "id": "ai-wiki-10",
+      "group": "ai",
+      "genre": "wiki",
+      "model": "claude-sonnet-5",
+      "score": 4.034700003375324
+    },
+    {
+      "id": "wiki-04",
+      "group": "human",
+      "genre": "wiki",
+      "model": "",
+      "score": 3.637548290893079
+    },
+    {
+      "id": "personal-07",
+      "group": "human",
+      "genre": "personal",
+      "model": "",
+      "score": 3.386829937657499
+    },
+    {
+      "id": "personal-04",
+      "group": "human",
+      "genre": "personal",
+      "model": "",
+      "score": 3.3259229092094067
+    },
+    {
+      "id": "tech-01",
+      "group": "human",
+      "genre": "tech",
+      "model": "",
+      "score": 3.172147810434775
+    },
+    {
+      "id": "ai-wiki-03",
+      "group": "ai",
+      "genre": "wiki",
+      "model": "claude-opus-5",
+      "score": 2.8744592265108455
+    },
+    {
+      "id": "ai-tech-02",
+      "group": "ai",
+      "genre": "tech",
+      "model": "claude-sonnet-5",
+      "score": 2.8181047303514806
+    },
+    {
+      "id": "ai-personal-07",
+      "group": "ai",
+      "genre": "personal",
+      "model": "claude-opus-5",
+      "score": 1.999129919252343
+    },
+    {
+      "id": "ai-wiki-02",
+      "group": "ai",
+      "genre": "wiki",
+      "model": "claude-sonnet-5",
+      "score": 1.9899284904843153
+    },
+    {
+      "id": "wiki-08",
+      "group": "human",
+      "genre": "wiki",
+      "model": "",
+      "score": 1.9337250290155734
+    },
+    {
+      "id": "ai-tech-10",
+      "group": "ai",
+      "genre": "tech",
+      "model": "claude-sonnet-5",
+      "score": 1.7500648383819768
+    },
+    {
+      "id": "ai-personal-03",
+      "group": "ai",
+      "genre": "personal",
+      "model": "claude-opus-5",
+      "score": 1.655841555843184
+    },
+    {
+      "id": "ai-tech-09",
+      "group": "ai",
+      "genre": "tech",
+      "model": "claude-opus-5",
+      "score": 1.6464366588903196
+    },
+    {
+      "id": "ai-tech-07",
+      "group": "ai",
+      "genre": "tech",
+      "model": "claude-opus-5",
+      "score": 1.6422028837389866
+    },
+    {
+      "id": "ai-tech-05",
+      "group": "ai",
+      "genre": "tech",
+      "model": "claude-opus-5",
+      "score": 1.176581210118354
+    },
+    {
+      "id": "ai-wiki-07",
+      "group": "ai",
+      "genre": "wiki",
+      "model": "claude-opus-5",
+      "score": 0.9749102180070506
+    },
+    {
+      "id": "ai-personal-08",
+      "group": "ai",
+      "genre": "personal",
+      "model": "claude-sonnet-5",
+      "score": 0.9302775355095654
+    },
+    {
+      "id": "ai-tech-08",
+      "group": "ai",
+      "genre": "tech",
+      "model": "claude-sonnet-5",
+      "score": 0.47923126184826703
+    },
+    {
+      "id": "ai-personal-01",
+      "group": "ai",
+      "genre": "personal",
+      "model": "claude-opus-5",
+      "score": 0.46061251166997463
+    },
+    {
+      "id": "personal-09",
+      "group": "human",
+      "genre": "personal",
+      "model": "",
+      "score": 0.19324688596482142
+    },
+    {
+      "id": "wiki-09",
+      "group": "human",
+      "genre": "wiki",
+      "model": "",
+      "score": 0.04064280379105645
+    },
+    {
+      "id": "ai-wiki-01",
+      "group": "ai",
+      "genre": "wiki",
+      "model": "claude-opus-5",
+      "score": -0.10358218035123334
+    },
+    {
+      "id": "ai-tech-03",
+      "group": "ai",
+      "genre": "tech",
+      "model": "claude-opus-5",
+      "score": -0.5208173197765429
+    },
+    {
+      "id": "ai-personal-02",
+      "group": "ai",
+      "genre": "personal",
+      "model": "claude-sonnet-5",
+      "score": -1.8271099449643295
+    },
+    {
+      "id": "ai-personal-04",
+      "group": "ai",
+      "genre": "personal",
+      "model": "claude-sonnet-5",
+      "score": -1.9072966032522949
+    },
+    {
+      "id": "ai-personal-10",
+      "group": "ai",
+      "genre": "personal",
+      "model": "claude-sonnet-5",
+      "score": -1.9758852848803707
+    },
+    {
+      "id": "wiki-10",
+      "group": "human",
+      "genre": "wiki",
+      "model": "",
+      "score": -2.5749093974611483
+    },
+    {
+      "id": "wiki-03",
+      "group": "human",
+      "genre": "wiki",
+      "model": "",
+      "score": -2.768928954186599
+    },
+    {
+      "id": "tech-08",
+      "group": "human",
+      "genre": "tech",
+      "model": "",
+      "score": -2.9880451161568873
+    },
+    {
+      "id": "wiki-07",
+      "group": "human",
+      "genre": "wiki",
+      "model": "",
+      "score": -3.0111776398798304
+    },
+    {
+      "id": "tech-06",
+      "group": "human",
+      "genre": "tech",
+      "model": "",
+      "score": -3.5971383828579517
+    },
+    {
+      "id": "tech-04",
+      "group": "human",
+      "genre": "tech",
+      "model": "",
+      "score": -3.773093456543894
+    },
+    {
+      "id": "ai-tech-04",
+      "group": "ai",
+      "genre": "tech",
+      "model": "claude-sonnet-5",
+      "score": -4.36447630712964
+    },
+    {
+      "id": "wiki-06",
+      "group": "human",
+      "genre": "wiki",
+      "model": "",
+      "score": -5.026894395550228
+    },
+    {
+      "id": "tech-09",
+      "group": "human",
+      "genre": "tech",
+      "model": "",
+      "score": -5.256888287815699
+    },
+    {
+      "id": "tech-10",
+      "group": "human",
+      "genre": "tech",
+      "model": "",
+      "score": -5.26733476962573
+    },
+    {
+      "id": "tech-07",
+      "group": "human",
+      "genre": "tech",
+      "model": "",
+      "score": -5.779661069374823
+    },
+    {
+      "id": "tech-03",
+      "group": "human",
+      "genre": "tech",
+      "model": "",
+      "score": -5.959009702836845
+    },
+    {
+      "id": "ai-personal-06",
+      "group": "ai",
+      "genre": "personal",
+      "model": "claude-sonnet-5",
+      "score": -6.451648767067981
+    },
+    {
+      "id": "personal-05",
+      "group": "human",
+      "genre": "personal",
+      "model": "",
+      "score": -6.548331194152579
+    },
+    {
+      "id": "tech-05",
+      "group": "human",
+      "genre": "tech",
+      "model": "",
+      "score": -7.198334003950787
+    },
+    {
+      "id": "wiki-01",
+      "group": "human",
+      "genre": "wiki",
+      "model": "",
+      "score": -7.452835762325973
+    },
+    {
+      "id": "wiki-02",
+      "group": "human",
+      "genre": "wiki",
+      "model": "",
+      "score": -7.981678609632741
+    },
+    {
+      "id": "personal-08",
+      "group": "human",
+      "genre": "personal",
+      "model": "",
+      "score": -8.43823267652345
+    },
+    {
+      "id": "tech-02",
+      "group": "human",
+      "genre": "tech",
+      "model": "",
+      "score": -9.004922868816967
+    },
+    {
+      "id": "wiki-05",
+      "group": "human",
+      "genre": "wiki",
+      "model": "",
+      "score": -9.382038062536653
+    },
+    {
+      "id": "personal-03",
+      "group": "human",
+      "genre": "personal",
+      "model": "",
+      "score": -10.141915730134269
+    },
+    {
+      "id": "personal-01",
+      "group": "human",
+      "genre": "personal",
+      "model": "",
+      "score": -10.929960763495432
+    },
+    {
+      "id": "personal-10",
+      "group": "human",
+      "genre": "personal",
+      "model": "",
+      "score": -12.422240229535623
+    },
+    {
+      "id": "personal-06",
+      "group": "human",
+      "genre": "personal",
+      "model": "",
+      "score": -18.976726581849935
+    }
+  ]
+}
