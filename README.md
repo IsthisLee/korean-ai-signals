@@ -4,7 +4,7 @@
 
 무엇을 재는지와 판정 기준은 [분석 계획](docs/plan.md)에 결과보다 먼저 적었습니다. 용어 풀이와 배경부터 적어 두었으므로 처음 보는 분은 그 문서부터 읽으시면 됩니다. 쉬운 말로 풀어 쓴 안내는 [docs/README.md](docs/README.md) 에 있습니다. 이 문서에는 돌리는 순서만 적습니다.
 
-이 결과는 Claude Code 플러그인 [korean-writing](https://github.com/IsthisLee/korean-writing) 의 검사 규칙과 윤문 도구를 고르는 근거로 씁니다. 표본은 어떤 모델의 학습에도 쓰지 않습니다.
+이 결과는 Claude Code 플러그인 [korean-kit](https://github.com/IsthisLee/korean-kit) 의 검사 규칙과 윤문 도구를 고르는 근거로 씁니다. 표본은 어떤 모델의 학습에도 쓰지 않습니다.
 
 수집한 사람 글 본문, AI 글, 지표, 보고서는 모두 `out/` 에 쌓이고 `.gitignore` 가 커밋을 막습니다. 표본 목록(URL, 날짜, 필자, 글자 수)만 결과를 기록할 때 따로 커밋합니다.
 

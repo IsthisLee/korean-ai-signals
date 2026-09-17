@@ -12,7 +12,7 @@ import urllib.request
 CUTOFF = "2022-11-30T00:00:00Z"
 CUTOFF_CDX = "20221130000000"
 MIN_HANGUL = 800
-USER_AGENT = "korean-writing-signals/0.1 (+https://github.com/IsthisLee/korean-writing)"
+USER_AGENT = "korean-kit-signals/0.1 (+https://github.com/IsthisLee/korean-kit)"
 
 MANIFEST_FIELDS = [
     "id", "genre", "author", "title", "raw_title", "url",
