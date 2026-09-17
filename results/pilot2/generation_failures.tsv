@@ -1,3 +1,0 @@
-id	reason	raw
-ai-tech-04	claude-sonnet-5 가 도구 없는 세션에서 「MEMORY.md와 관련 메모리를 먼저 확인하겠습니다. **Tool: skill**」만 남기고 끝남(가짜 도구 호출, 글 없음)	ai-raw/ai-tech-04-1.failed.json
-ai-tech-10	claude-sonnet-5 가 「사용자의 메모리를 먼저 확인한 뒤 블로그 글을 작성하겠습니다. **Tool: bash**」만 남기고 끝남(가짜 도구 호출, 글 없음)	ai-raw/ai-tech-10-1.failed.json

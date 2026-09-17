@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """여러 지표를 합친 문서 점수(분석 계획 5.3 의 2단계). 한 실행으로 만들고 다른 실행으로 확인한다.
 
-    python3 score.py --train out/pilot-matched --test out/pilot2-matched --out out/pilot2-score
+    python3 score.py --train out/train-matched --test out/main-matched --out out/main-score
 
 1. 지표를 성격이 같은 묶음(GROUPS)으로 나눈다.
 2. 훈련 실행에서 지표마다 사람 글과 AI 글의 평균과 표준편차를 구한다. 표준편차는 두 묶음을 합친

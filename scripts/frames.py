@@ -5,7 +5,7 @@ maczniak/awesome-korean-techblog 의 2022-11-30 이전 마지막 커밋(68fbe20,
 「기업 블로그」 절의 항목만 읽고, 항목마다 Common Crawl 색인 질의 형식과 글 주소 식을 붙인다.
 
     curl -sL https://raw.githubusercontent.com/maczniak/awesome-korean-techblog/68fbe200f1fbe44bae1bad1449b71aff80986d09/README.md -o techblog-68fbe20.md
-    python3 frames.py techblog-68fbe20.md > out/pilot/frames/tech.tsv
+    python3 frames.py techblog-68fbe20.md > out/main/frames/tech.tsv
 """
 import csv
 import re

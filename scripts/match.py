@@ -4,9 +4,9 @@
 2026-09-16 사용자 결정: AI 글이 요청한 분량보다 짧게 나오므로, 분량은 생성 때가 아니라 분석 때 맞춘다.
 대개 사람 글이 잘리고, AI 글이 더 길면 AI 글이 잘린다. 짝이 되는 AI 글이 제외된 사람 글은 뺀다.
 
-    python3 match.py --src out/pilot2 --dst out/pilot2-matched
-    python3 signals.py out/pilot2-matched/clean/human/*.txt out/pilot2-matched/clean/ai/*.txt --out out/pilot2-matched/features
-    python3 analyze.py --out out/pilot2-matched
+    python3 match.py --src out/main --dst out/main-matched
+    python3 signals.py out/main-matched/clean/human/*.txt out/main-matched/clean/ai/*.txt --out out/main-matched/features
+    python3 analyze.py --out out/main-matched
 """
 import argparse
 import csv
@@ -14,7 +14,30 @@ import pathlib
 import shutil
 
 from common import hangul_count, read_manifest
-from lenmatch import truncate
+from signals import kiwi
+
+
+def truncate(text, target):
+    """문장 경계를 지키며 한글 글자 수가 target 에 닿을 때까지만 남긴다."""
+    k = kiwi()
+    kept, n = [], 0
+    for line in text.split("\n"):
+        if not line.strip():
+            if kept and kept[-1] != "":
+                kept.append("")
+            continue
+        sents = [s.text for s in k.split_into_sents(line)]
+        taken = []
+        for s in sents:
+            if n >= target:
+                break
+            taken.append(s)
+            n += hangul_count(s)
+        if taken:
+            kept.append(" ".join(taken))
+        if n >= target:
+            break
+    return "\n".join(kept).strip() + "\n"
 
 
 def main():

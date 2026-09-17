@@ -2,7 +2,7 @@
 """분석 계획 5.1 의 사람 대조용 표를 만든다. 사람 글과 AI 글에서 문장 10개씩을 시드로 뽑아
 형태소 분석 결과와 띄어쓰기 판정(의존명사·보조 용언 앞 공백 여부)을 원문 옆에 적는다.
 
-    python3 spotcheck.py --out out/pilot
+    python3 spotcheck.py --out out/main
 """
 import argparse
 import pathlib

@@ -4,9 +4,9 @@
 수집 시각이 게시일의 상한이 되고, 본문도 그 수집본에서 뽑으므로 나중에 고친 글이 섞이지 않는다.
 
     # 개인 블로그: awesome-devblog db.yml 의 개인 목록에서 필자를 무작위로 고른다
-    python3 collect_cc.py personal --db db.yml --n 10 --out out/pilot --seed 20260916
+    python3 collect_cc.py personal --db db.yml --n 10 --out out/main --seed 20260916
     # 기업 기술 블로그: frame tsv(company, pattern, post_regex)에서 회사를 고르고 회사마다 글을 고른다
-    python3 collect_cc.py tech --frame frames/tech.tsv --companies 5 --per-company 2 --out out/pilot --seed 20260916
+    python3 collect_cc.py tech --frame frames/tech.tsv --companies 5 --per-company 2 --out out/main --seed 20260916
 """
 import argparse
 import signal

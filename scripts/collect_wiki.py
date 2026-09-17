@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """한국어 위키백과 무작위 문서의 2022-11-30 이전 마지막 판에서 본문 문단을 모은다.
 
-    python3 collect_wiki.py --n 10 --out out/pilot --prefix wiki [--exclude 이전manifest.tsv ...]
+    python3 collect_wiki.py --n 10 --out out/main --prefix wiki [--exclude 이전manifest.tsv ...]
 """
 import argparse
 import datetime

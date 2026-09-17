@@ -1,17 +1,15 @@
 #!/usr/bin/env python3
 """사람 글과 AI 글의 지표를 비교해 보고서를 쓴다. 기준은 분석 계획 5.3 을 따른다.
 
-    python3 analyze.py --out out/pilot
+    python3 analyze.py --out out/main
 
 - 문서마다 값이 하나인 지표: Mann-Whitney U 양측 검정, Benjamini-Yekutieli 보정(q = 0.05).
 - 방향: 연구가 보고한 방향(up/down)을 쓰고, 연구끼리 엇갈리거나 방향이 없으면(both) 표본에서 본 방향을 쓰고 표시한다.
 - 적중: 방향이 up 이면 사람 글 최댓값보다 큰 AI 글, down 이면 최솟값보다 작은 AI 글.
 - 반분: 사람 글을 장르마다 시드로 섞어 반으로 나누고, 선별용 반의 최댓값·최솟값을 문턱으로 삼아
   검증용 반에서 문턱을 넘는 사람 글 수와 AI 글 적중 수를 함께 센다.
-- 항목 목록(5.2 의 10, 12~15): 로그 오즈 z(정보 사전분포, α0 = 1000). 같은 표본에서 고른 탐색 결과다.
 """
 import argparse
-import collections
 import json
 import math
 import pathlib
@@ -21,12 +19,10 @@ import statistics
 from scipy.stats import false_discovery_control, mannwhitneyu
 
 from common import read_manifest, write_json
-from signals import FEATURES, NOT_MEASURED
+from signals import FEATURES
 
 SEED = "20260916"
 Q = 0.05
-ALPHA0 = 1000
-LISTS = {"lemmas": 10, "pos_bigrams": 12, "function_words": 13, "josa_bigrams": 14, "eojeol_patterns": 15}
 
 
 def load(out):
@@ -72,18 +68,6 @@ def over(docs, key, direction, lo, hi):
 
 def sign(a, b):
     return "up" if a > b else "down" if a < b else "none"
-
-
-def log_odds(c_ai, c_h):
-    n_ai, n_h = sum(c_ai.values()), sum(c_h.values())
-    total = n_ai + n_h
-    rows = []
-    for w in set(c_ai) | set(c_h):
-        ya, yh = c_ai.get(w, 0), c_h.get(w, 0)
-        aw = ALPHA0 * (ya + yh) / total
-        delta = math.log((ya + aw) / (n_ai + ALPHA0 - ya - aw)) - math.log((yh + aw) / (n_h + ALPHA0 - yh - aw))
-        rows.append((delta / math.sqrt(1 / (ya + aw) + 1 / (yh + aw)), w, ya, yh))
-    return sorted(rows, reverse=True)
 
 
 def main():
@@ -133,21 +117,6 @@ def main():
         others = set().union(*(s for k, s in hit_sets.items() if k != r["key"]))
         r["unique_hits_full"] = sorted(set(r["hits_full"]) - others)
 
-    explore = {}
-    for lk, no in LISTS.items():
-        c_h, c_ai = collections.Counter(), collections.Counter()
-        df_h, df_ai = collections.Counter(), collections.Counter()
-        for d in humans:
-            c_h.update(d["lists"][lk])
-            df_h.update(d["lists"][lk].keys())
-        for d in ais:
-            c_ai.update(d["lists"][lk])
-            df_ai.update(d["lists"][lk].keys())
-        z = log_odds(c_ai, c_h)
-        fmt = lambda t: {"item": t[1], "z": round(t[0], 2), "count_ai": t[2], "count_h": t[3], "docs_ai": df_ai[t[1]], "docs_h": df_h[t[1]]}
-        explore[lk] = {"no": no, "ai_over": [fmt(t) for t in z[:15]], "human_over": [fmt(t) for t in z[::-1][:15]],
-                       "human_zero": sorted(({"item": w, "docs_ai": n} for w, n in df_ai.items() if df_h[w] == 0), key=lambda x: (-x["docs_ai"], x["item"]))[:15]}
-
     ai_meta = read_manifest(out / "ai.tsv")
     summary = {
         "n_human": len(humans), "n_ai": len(ais),
@@ -160,11 +129,10 @@ def main():
         "features_with_full_hits": [r["key"] for r in tested if r["hits_full"]],
         "features_split_clean": [r["key"] for r in tested if r["val_human_over"] == [] and r["hits_split"]],
         "ai_docs_hit_by_any_full": len(set().union(*hit_sets.values())),
-        "not_measured": NOT_MEASURED,
     }
-    write_json(out / "results.json", {"summary": summary, "features": rows, "explore": explore})
+    write_json(out / "results.json", {"summary": summary, "features": rows})
 
-    lines = ["# 파일럿 결과", "", "```json", json.dumps(summary, ensure_ascii=False, indent=2), "```", "",
+    lines = ["# 분석 결과", "", "```json", json.dumps(summary, ensure_ascii=False, indent=2), "```", "",
              "| 번호 | 지표 | 연구 방향 | 사람 중앙값 | AI 중앙값 | P(AI>사람) | p | q(BY) | 전체 적중 | 단독 적중 | 반분 검증 사람 초과 | 반분 AI 적중 | 방향 뒤집힘 |",
              "| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |"]
     for r in rows:
@@ -175,10 +143,6 @@ def main():
         lines.append(f"| {r['no']} | {r['name']} | {r['research']}{mark} | {r['median_h']:.4g} | {r['median_ai']:.4g} | {r['p_ai_gt_h']:.2f} | {r['p']:.3g} | {r['q_by']:.3g} | "
                      f"{len(r['hits_full'])} | {len(r['unique_hits_full'])} | {len(r['val_human_over'])}/{len(val)} | {len(r['hits_split'])} | {'예' if r['reversed_somewhere'] else ''} |")
     lines += ["", "`*` 는 연구 방향이 엇갈리거나 없어 표본에서 본 방향으로 적중을 셌다는 뜻입니다.", ""]
-    for lk, e in explore.items():
-        lines += [f"## 탐색: {lk} (5.2 의 {e['no']}번)", "", "AI 쪽이 많은 항목: " + ", ".join(f"{x['item']}(z={x['z']}, 문서 AI {x['docs_ai']}·사람 {x['docs_h']})" for x in e["ai_over"][:10]), "",
-                  "사람 쪽이 많은 항목: " + ", ".join(f"{x['item']}(z={x['z']}, 문서 AI {x['docs_ai']}·사람 {x['docs_h']})" for x in e["human_over"][:10]), "",
-                  "사람 글에 한 번도 없는 항목: " + ", ".join(f"{x['item']}(AI 문서 {x['docs_ai']})" for x in e["human_zero"][:10]), ""]
     (out / "report.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
     print("\n".join(lines[:60]))
 

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """지표를 계산하기 전에 사람 글과 AI 글을 같은 규칙으로 정리해 out/<실행>/clean/ 에 쓴다. 원본은 고치지 않는다.
 
-    python3 clean.py --out out/pilot
+    python3 clean.py --out out/main
 
 규칙
 1. 모든 글: 제목과 같은 줄(앞의 # 과 공백 차이는 무시)을 뺀다. 사람 글 추출본과 AI 글 모두 제목을 본문 첫 줄에 넣기도 한다.

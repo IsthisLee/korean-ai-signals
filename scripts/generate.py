@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """사람 글 한 편마다 같은 제목, 같은 장르, 비슷한 분량으로 Claude 글을 한 편 쓰게 한다.
 
-    python3 generate.py --out out/pilot            # human.tsv 의 모든 글
-    python3 generate.py --out out/pilot --only wiki-01
+    python3 generate.py --out out/main            # human.tsv 의 모든 글
+    python3 generate.py --out out/main --only wiki-01
 
 모델은 장르마다 id 순서로 claude-opus-5 와 claude-sonnet-5 를 번갈아 쓴다.
 사용자 설정, 훅, MCP, 도구를 모두 빼고 빈 폴더에서 돌린다. output style 은 켜지 않는다.
@@ -68,7 +68,7 @@ def main():
             continue
         model = MODELS[k % 2]
         target = int(round(int(h["hangul"]), -1))
-        template = (HERE / "prompts" / f"{h['genre']}.txt").read_text(encoding="utf-8")
+        template = (HERE.parent / "prompts" / f"{h['genre']}.txt").read_text(encoding="utf-8")
         prompt = template.format(title=h["title"], chars=f"{target:,}")
         cost = duration = 0
         for attempt in range(1, MAX_ATTEMPTS + 1):
