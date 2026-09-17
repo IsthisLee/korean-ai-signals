@@ -82,3 +82,7 @@ out/           본문·지표·보고서. 커밋하지 않습니다
 | `spotcheck.py` | 형태소 분석과 띄어쓰기 판정을 사람이 대조할 표를 만듦 |
 | `match.py` | 짝마다 긴 쪽 글을 짧은 쪽의 한글 글자 수에 맞춰 문장 경계에서 자름 |
 | `score.py` | 지표 묶음마다 대표 지표의 로그 우도비를 더한 문서 점수를 한 실행으로 만들고 다른 실행으로 확인함 |
+
+---
+
+<p align="center"><sub>Built with <a href="https://claude.com/claude-code">Claude Code</a> · <a href="./LICENSE">MIT</a></sub></p>
